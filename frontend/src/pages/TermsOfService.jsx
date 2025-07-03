@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Shield, Book, Scale, Clock, FileText } from 'lucide-react';
-import styles from '../styles/termsOfservice.module.css';
+import styles from '../styles/termsofservice.module.css';
 
 const TermsOfService = () => {
   // Function to scroll to specific section
