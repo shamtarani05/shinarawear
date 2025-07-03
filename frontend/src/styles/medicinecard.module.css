@@ -1,0 +1,405 @@
+/* Updated TShirtCard.module.css - Image Layout Style */
+.container {
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.container:hover {
+  transform: translateY(-8px);
+}
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-white);
+  height: 470px;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-charcoal-muted);
+  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+  box-shadow: 0 4px 12px var(--color-shadow);
+  margin: 0 auto;
+}
+
+.card:hover {
+  box-shadow: 0 16px 32px var(--color-shadow-dark);
+  border: 1.5px solid var(--color-coral);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background: var(--color-light-gray);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tshirtImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s;
+  display: block;
+}
+
+.card:hover .tshirtImage {
+  transform: scale(1.04);
+}
+
+/* Add button like in the image */
+.addButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--color-charcoal-muted);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  color: var(--color-dark-gray);
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.card:hover .addButton {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.addButton:hover {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border-color: transparent;
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.addButton::before {
+  content: '+';
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px var(--color-shadow);
+  z-index: 2;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.favoriteButton:hover, .favoriteActive {
+  background: var(--color-coral);
+  color: var(--color-white);
+  transform: scale(1.1);
+}
+
+.favoriteActive {
+  background: var(--color-coral);
+  color: var(--color-white);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--color-lavender);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--color-shadow);
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.contentContainer {
+  padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--color-white);
+  text-align: left;
+  align-items: flex-start;
+}
+
+.medicineName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 0.25rem 0;
+  line-height: 1.3;
+  max-height: 2.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.manufacturer, .brandName {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-coral);
+}
+
+.discountWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mrp {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: var(--color-gray);
+  margin-left: 2px;
+}
+
+.discount {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.15rem 0.7rem;
+  border-radius: 10px;
+  margin-left: 0.5rem;
+}
+
+.stockInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.inStock {
+  color: var(--color-success);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.outOfStock {
+  color: var(--color-error);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.delivery {
+  color: var(--color-ocean);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.addToCartButton {
+  flex: 1;
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.addToCartButton:hover {
+  background: var(--gradient-secondary);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.infoButton {
+  background: var(--color-white);
+  color: var(--color-lavender);
+  border: 2px solid var(--color-lavender);
+  border-radius: 50px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.infoButton:hover {
+  background: var(--gradient-ocean);
+  color: var(--color-white);
+  border-color: transparent;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Info Overlay Styles */
+.infoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.infoPanel {
+  background: var(--color-white);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px var(--color-shadow-dark);
+  padding: 2rem;
+  min-width: 320px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.infoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.infoTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--color-gray);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.closeButton:hover {
+  background: var(--color-charcoal-light);
+}
+
+.infoContent {
+  font-size: 1rem;
+  color: var(--color-slate);
+}
+
+.infoDescription {
+  margin-bottom: 1rem;
+}
+
+.infoAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-error);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 1200px) {
+  .card {
+    max-width: 260px;
+  }
+  .imageContainer {
+    height: 150px;
+  }
+}
+@media (max-width: 900px) {
+  .card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 90vw;
+    max-width: 320px;
+    height: 370px;
+  }
+  .imageContainer {
+    height: 140px;
+  }
+  .contentContainer {
+    padding: 0.5rem 0.5rem 0.8rem 0.5rem;
+  }
+  .medicineName {
+    font-size: 0.95rem;
+  }
+  .price {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,600 @@
+/* heroSection.module.css - Optimized and Simplified */
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Background Gradients - Simplified and Smooth */
+.slideBgMens {
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #3730a3 100%);
+}
+
+.slideBgWomens {
+  background: linear-gradient(135deg, #fb7185 0%, #ec4899 50%, #9333ea 100%);
+}
+
+.slideBgEthnic {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #dc2626 100%);
+}
+
+.slideBgAccessories {
+  background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+}
+
+.slideBgNewArrivals {
+  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 50%, #4338ca 100%);
+}
+
+.slideBgSale {
+  background: linear-gradient(135deg, #ef4444 0%, #ec4899 50%, #f43f5e 100%);
+}
+
+.slideBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 1s ease-in-out;
+}
+
+/* Simplified Background Pattern */
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.floatingCircle {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.floatingCircle1 {
+  top: 2.5rem;
+  left: 2.5rem;
+  width: 6rem;
+  height: 6rem;
+  animation-delay: 0s;
+}
+
+.floatingCircle2 {
+  top: 8rem;
+  right: 4rem;
+  width: 4rem;
+  height: 4rem;
+  animation-delay: 1s;
+}
+
+.floatingCircle3 {
+  bottom: 4rem;
+  left: 30%;
+  width: 3rem;
+  height: 3rem;
+  animation-delay: 2s;
+}
+
+.floatingCircle4 {
+  bottom: 8rem;
+  right: 20%;
+  width: 5rem;
+  height: 5rem;
+  animation-delay: 0.5s;
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.15;
+  }
+}
+
+/* Main Content Container */
+.contentContainer {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* Text Content */
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+/* Brand Badge - Simplified */
+.brandBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  align-self: center;
+  width: fit-content;
+}
+
+.brandIcon {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
+.brandIconMens { background-color: #3b82f6; }
+.brandIconWomens { background-color: #ec4899; }
+.brandIconEthnic { background-color: #f97316; }
+.brandIconAccessories { background-color: #14b8a6; }
+.brandIconNewArrivals { background-color: #8b5cf6; }
+.brandIconSale { background-color: #ef4444; }
+
+.brandText {
+  color: white;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+}
+
+/* Headlines - Cleaner Typography */
+.headlineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+/* Description */
+.description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 28rem;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* CTA Button - Enhanced */
+.ctaButton {
+  background-color: white;
+  color: #111827;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  align-self: center;
+  width: fit-content;
+}
+
+.ctaButton:hover {
+  background-color: #f9fafb;
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.ctaButtonIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #111827;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .ctaButtonIcon {
+  transform: translateX(0.25rem);
+}
+
+/* Category Indicator */
+.categoryIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.categoryDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.categoryDotMens { background-color: #3b82f6; }
+.categoryDotWomens { background-color: #ec4899; }
+.categoryDotEthnic { background-color: #f97316; }
+.categoryDotAccessories { background-color: #14b8a6; }
+.categoryDotNewArrivals { background-color: #8b5cf6; }
+.categoryDotSale { background-color: #ef4444; }
+
+.categoryText {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* Product Image Section - Perfect Fit Optimization */
+.productImageSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+/* Simplified Floating Frame Effects */
+.floatingFrame1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  transform: rotate(2deg) scale(1.02);
+  transition: transform 0.5s ease;
+}
+
+.floatingFrame2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  transform: rotate(-1deg) scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+/* Main Image Frame - Perfect Fit */
+.mainImageFrame {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.mainImageFrame:hover {
+  transform: scale(1.05);
+}
+
+.mainImageFrame:hover ~ .floatingFrame1 {
+  transform: rotate(3deg) scale(1.03);
+}
+
+.mainImageFrame:hover ~ .floatingFrame2 {
+  transform: rotate(-2deg) scale(1.06);
+}
+
+/* Image Wrapper for Perfect Aspect Ratio */
+.imageWrapper {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.productImage {
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.mainImageFrame:hover .productImage {
+  transform: scale(1.1);
+}
+
+/* Image Overlay for Better Integration */
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Floating Badge - Enhanced */
+.floatingBadge {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  background-color: #fbbf24;
+  color: #111827;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  animation: subtleBounce 2s infinite;
+}
+
+@keyframes subtleBounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -5px, 0);
+  }
+  70% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+/* Navigation Buttons - Simplified */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+}
+
+.navButton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navButtonPrev {
+  left: 1.5rem;
+}
+
+.navButtonNext {
+  right: 1.5rem;
+}
+
+/* Pagination Dots - Cleaner */
+.pagination {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.paginationDot {
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 0.75rem;
+}
+
+.paginationDotActive {
+  width: 2rem;
+  background-color: white;
+}
+
+.paginationDotInactive {
+  width: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.paginationDotInactive:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Brand Watermark */
+.brandWatermark {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive Design - Mobile First Approach */
+@media (min-width: 1024px) {
+  .heroSection {
+    height: 600px;
+  }
+  
+  .contentGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .textContent {
+    text-align: left;
+  }
+  
+  .brandBadge {
+    align-self: flex-start;
+  }
+  
+  .ctaButton {
+    align-self: flex-start;
+  }
+  
+  .categoryIndicator {
+    justify-content: flex-start;
+  }
+  
+  .description {
+    margin: 0;
+  }
+  
+  .productImageSection {
+    justify-content: flex-end;
+  }
+  
+  .mainTitle {
+    font-size: 3.75rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .imageWrapper {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 550px;
+  }
+  
+  .contentGrid {
+    gap: 2rem;
+  }
+  
+  .mainTitle {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    max-width: 24rem;
+  }
+  
+  .imageWrapper {
+    width: 16rem;
+    height: 16rem;
+  }
+  
+  .navButtonPrev {
+    left: 1rem;
+  }
+  
+  .navButtonNext {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    height: 500px;
+  }
+  
+  .mainTitle {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .ctaButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .imageWrapper {
+    width: 14rem;
+    height: 14rem;
+  }
+  
+  .floatingCircle1 {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .floatingCircle2 {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .floatingCircle3 {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .floatingCircle4 {
+    width: 3rem;
+    height: 3rem;
+  }
+}

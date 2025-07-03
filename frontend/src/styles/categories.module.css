@@ -1,0 +1,333 @@
+/* categories.module.css */
+
+.section {
+  padding: 4rem 0 3rem;
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-white) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* .section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-primary);
+  opacity: 0.3;
+} */
+
+/* .section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 3px 3px 0 0;
+} */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header Styling - More Elegant & Fashion-Forward */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+.titleWrapper {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  margin: 0 0 0.5rem 0;
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+  margin: 0;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Decorative Line */
+.decorativeLine {
+  height: 2px;
+  background: var(--gradient-neutral);
+  margin-bottom: 3rem;
+  border-radius: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.decorativeLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Navigation Buttons - More Sophisticated */
+.navButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.arrowBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  position: relative;
+  background-clip: padding-box;
+}
+
+.arrowBtn.active {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  border-color: var(--color-charcoal-muted);
+  box-shadow: 0 4px 20px var(--color-shadow-dark);
+}
+
+.arrowBtn.active:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 30px var(--color-shadow-dark);
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+.arrowBtn.disabled {
+  background: var(--color-light-gray);
+  color: var(--color-gray);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Slider Wrapper */
+.sliderWrapper {
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0 2rem;
+  margin: 0 -1rem;
+}
+
+.slider {
+  display: flex;
+  will-change: transform;
+  padding: 0 .5rem;
+}
+
+.slide {
+  flex-shrink: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Category Card - Premium Fashion Design */
+.categoryCard {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  box-shadow: 0 4px 20px var(--color-shadow);
+  border: 1px solid var(--color-charcoal-muted);
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-neutral);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.categoryCard:hover::before {
+  opacity: 1;
+}
+
+.categoryCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px var(--color-shadow-dark);
+  border-color: transparent;
+}
+
+.cardInner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Icon Circle - More Luxurious */
+.iconCircle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  border: 3px solid var(--color-white);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.iconCircle:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.shimmer {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: rotate 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.icon {
+  font-size: 3rem;
+  z-index: 2;
+  position: relative;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Category Info */
+.categoryInfo {
+  text-align: center;
+}
+
+.categoryName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.categoryCard:hover .categoryName {
+  color: var(--color-slate-dark);
+}
+
+.categoryHint {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  font-weight: 400;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.categoryCard:hover .categoryHint {
+  opacity: 1;
+  color: var(--color-charcoal);
+  font-weight: 500;
+}
+
+/* Indicators - Modern Dots */
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-charcoal-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+
+.indicator:hover {
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+
+.indicatorActive {
+  background: var(--gradient-primary);
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+  }
+}

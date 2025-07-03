@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    /* Primary Colors - Modern Black & White Foundation */
+    --color-charcoal: #1A1A1A;      /* Charcoal Black - Primary brand color */
+    --color-charcoal-light: #F8F8F8; /* Off-White - Background, cards */
+    --color-charcoal-muted: #E0E0E0; /* Light Gray - Borders, dividers */
+    
+    --color-slate: #2D3748;         /* Slate Gray - Secondary brand color */
+    --color-slate-dark: #1A202C;    /* Dark Slate - Deep text, headers */
+    
+    /* Accent Colors - Trendy & Fashion-Forward */
+    --color-coral: #FF6B6B;         /* Coral Pink - Primary CTA, sale tags */
+    --color-coral-light: #FFE5E5;   /* Light Coral - Hover states, backgrounds */
+    
+    --color-sage: #68D391;          /* Modern Sage - Success, eco-friendly tags */
+    --color-lavender: #9F7AEA;      /* Lavender Purple - Premium, luxury items */
+    --color-sunshine: #F6E05E;      /* Sunshine Yellow - Highlights, new arrivals */
+    
+    --color-ocean: #4299E1;         /* Ocean Blue - Links, info */
+    --color-peach: #FBB6CE;         /* Soft Peach - Feminine collection */
+    --color-mint: #81E6D9;          /* Mint Green - Fresh, summer collection */
+    
+    /* Neutral Colors - Clean & Modern */
+    --color-white: #FFFFFF;         /* Pure White - Clean backgrounds */
+    --color-cream: #FFFEF7;         /* Warm Cream - Alternative backgrounds */
+    --color-light-gray: #F7FAFC;    /* Light Gray - Section backgrounds */
+    --color-gray: #718096;          /* Medium Gray - Secondary text */
+    --color-dark-gray: #2D3748;     /* Dark Gray - Primary text */
+    --color-black: #1A202C;         /* Rich Black - Headlines, emphasis */
+    
+    /* Utility Colors - Functional */
+    --color-success: #48BB78;       /* Success Green - Order confirmations */
+    --color-warning: #ED8936;       /* Warning Orange - Stock alerts */
+    --color-error: #F56565;         /* Error Red - Validation errors */
+    --color-info: #4299E1;          /* Info Blue - Shipping info */
+    
+    /* Shadow & Effects */
+    --color-shadow: rgba(0, 0, 0, 0.08);     /* Soft shadow */
+    --color-shadow-dark: rgba(0, 0, 0, 0.15); /* Deeper shadow for cards */
+    
+    /* Gradients - Instagram-Worthy */
+    --gradient-primary: linear-gradient(135deg, var(--color-coral) 0%, var(--color-lavender) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--color-sage) 0%, var(--color-mint) 100%);
+    --gradient-sunset: linear-gradient(135deg, var(--color-sunshine) 0%, var(--color-coral) 100%);
+    --gradient-ocean: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-lavender) 100%);
+    --gradient-neutral: linear-gradient(135deg, var(--color-light-gray) 0%, var(--color-white) 100%);
+    
+    /* Special Fashion Gradients */
+    --gradient-trendy: linear-gradient(45deg, var(--color-coral), var(--color-sunshine), var(--color-sage), var(--color-lavender));
+    --gradient-premium: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+  
+  /* Base Styles */
+  body {
+    font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+    color: var(--color-dark-gray);
+    background-color: var(--color-light-gray);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-black);
+    font-weight: 600;
+  }
+  
+  a {
+    color: var(--color-ocean);
+    text-decoration: none;
+  }
+  
+ 
+  button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  
+  /* Remove focus outlines for mouse users, keep for keyboard users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  :focus-visible {
+    outline: 2px solid var(--color-sage);
+    outline-offset: 2px;
+  }
+  
+  /* Apply smooth transitions to interactive elements */
+  a, button, input, select, textarea {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Scrollbar styling for WebKit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-light-gray);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-sage-muted);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-sage);
+  }

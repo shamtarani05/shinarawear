@@ -1,0 +1,383 @@
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 2rem;
+    background-color: var(--color-light-gray);
+    background-image: linear-gradient(to bottom right, var(--color-cream), var(--color-light-gray));
+  }
+  
+  .authCard {
+    width: 100%;
+    max-width: 450px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px var(--color-shadow-dark);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .authCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(26, 26, 26, 0.15);
+  }
+  
+  .authTabs {
+    display: flex;
+    border-bottom: 1px solid var(--color-charcoal-muted);
+  }
+  
+  .tabButton {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--color-gray);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tabButton::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-coral);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .tabButton:hover {
+    color: var(--color-coral);
+  }
+  
+  .tabButton:hover::after {
+    width: 80%;
+    background-color: var(--color-coral);
+  }
+  
+  .activeTab {
+    color: var(--color-coral);
+    font-weight: 600;
+  }
+  
+  .activeTab::after {
+    width: 80%;
+    background-color: var(--color-coral);
+  }
+  
+  .authContent {
+    padding: 2rem;
+  }
+  
+  /* Form Styling */
+  .formContainer {
+    width: 100%;
+  }
+  
+  .formTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .formSubtitle {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  
+  .label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-slate);
+    transition: color 0.3s ease;
+  }
+  
+  .formGroup:focus-within .label {
+    color: var(--color-coral);
+  }
+  
+  .input {
+    padding: 0.75rem;
+    border: 1px solid var(--color-charcoal-muted);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: var(--color-coral);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .forgotPassword {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.5rem;
+  }
+  
+  .forgotBtn {
+    background: none;
+    border: none;
+    color: var(--color-ocean);
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .forgotBtn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-ocean);
+    transition: width 0.3s ease;
+  }
+  
+  .forgotBtn:hover {
+    color: var(--color-slate-dark);
+  }
+  
+  .forgotBtn:hover::after {
+    width: 100%;
+    background-color: var(--color-slate-dark);
+  }
+  
+  .submitButton {
+    padding: 0.85rem;
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .submitButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+  }
+  
+  .submitButton:hover {
+    background: var(--gradient-sunset);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+  }
+  
+  .submitButton:hover::before {
+    left: 100%;
+  }
+  
+  .submitButton:active {
+    transform: translateY(1px);
+  }
+  
+  .submitButton:disabled {
+    background-color: var(--color-charcoal-muted);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .secondaryButton {
+    padding: 0.85rem;
+    background-color: transparent;
+    color: var(--color-slate);
+    border: 1px solid var(--color-slate);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.8rem;
+    text-align: center;
+  }
+  
+  .secondaryButton:hover {
+    background-color: rgba(45, 55, 72, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(45, 55, 72, 0.15);
+  }
+  
+  .secondaryButton:active {
+    transform: translateY(1px);
+  }
+  
+  .errorMessage {
+    background-color: rgba(245, 101, 101, 0.1);
+    color: var(--color-error);
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--color-error);
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+  
+  .successContainer {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .successMessage {
+    color: var(--color-success);
+    margin: 1.5rem 0;
+    line-height: 1.5;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* OTP Verification Styling */
+  .otpContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .otpInput {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--color-charcoal-muted);
+    border-radius: 8px;
+    background-color: var(--color-cream);
+    color: var(--color-dark-gray);
+    transition: all 0.3s ease;
+  }
+  
+  .otpInput:focus {
+    outline: none;
+    border-color: var(--color-coral);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+    transform: scale(1.05);
+    background-color: var(--color-white);
+  }
+  
+  .resendContainer {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .timerText {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+  }
+  
+  .resendBtn {
+    background: none;
+    border: none;
+    color: var(--color-ocean);
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .resendBtn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-ocean);
+    transition: width 0.3s ease;
+  }
+  
+  .resendBtn:hover {
+    color: var(--color-slate-dark);
+  }
+  
+  .resendBtn:hover::after {
+    width: 100%;
+    background-color: var(--color-slate-dark);
+  }
+  
+  /* Form appear animation */
+  .form {
+    animation: formAppear 0.5s ease-out;
+  }
+  
+  @keyframes formAppear {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .authCard {
+      max-width: 100%;
+    }
+    
+    .authContent {
+      padding: 1.5rem;
+    }
+    
+    .otpInput {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.25rem;
+    }
+  }
