@@ -128,7 +128,7 @@ const CompactAddressDropdown = () => {
     setErrors(prev => ({ ...prev, search: null }));
     
     try {
-      const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`);
+      const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`); // third-party API, not using apiUrl
       
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -169,7 +169,7 @@ const CompactAddressDropdown = () => {
     setErrors(prev => ({ ...prev, geocoding: null }));
     
     try {
-      const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`);
+      const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`); // third-party API, not using apiUrl
       
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);

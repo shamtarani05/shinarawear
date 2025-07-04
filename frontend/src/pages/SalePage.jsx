@@ -4,6 +4,7 @@ import CategoryFilter from '../components/CategoryFilter';
 import styles from '../styles/productspage.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { apiUrl } from '../utils/api';
 
 const categories = [
   "Men's Collection",
@@ -27,7 +28,7 @@ const SalePage = () => {
       try {
         setLoading(true);
         setError(null);
-        let url = `http://localhost:3000/products?discountMin=10&page=${currentPage}&limit=${PRODUCTS_PER_PAGE}`;
+        let url = apiUrl(`/products?discountMin=10&page=${currentPage}&limit=${PRODUCTS_PER_PAGE}`);
         if (selectedCategory) url += `&category=${encodeURIComponent(selectedCategory)}`;
         const response = await fetch(url);
         if (!response.ok) throw new Error('Failed to fetch sale products');
