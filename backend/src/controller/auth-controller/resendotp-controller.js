@@ -1,7 +1,7 @@
 const OTP = require('../../models/otp-schema');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',

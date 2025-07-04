@@ -1,6 +1,6 @@
 // HeroSection.jsx
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/heroSection.module.css';
+import styles from '../styles/herosection.module.css';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

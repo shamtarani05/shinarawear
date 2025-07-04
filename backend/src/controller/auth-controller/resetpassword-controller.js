@@ -1,6 +1,6 @@
 const User = require('../../models/user-schema');
 const OTP = require('../../models/otp-schema');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const resetPasswordController = async (req, res) => {
     try {
