@@ -67,12 +67,12 @@ const FAQs = () => {
       {
         id: 'o1',
         question: 'How long will it take to receive my order?',
-        answer: 'Domestic orders are typically processed within 1-2 business days. Standard shipping takes 3-5 business days, while expedited shipping options are available at checkout. International shipping times vary by location but generally take 7-14 business days. You will receive a tracking number once your order ships so you can monitor its progress.'
+        answer: 'Delivery is within 4-5 days after order confirmation.'
       },
       {
         id: 'o2',
         question: 'Do you ship internationally?',
-        answer: 'Yes, we ship to most countries worldwide. International shipping rates and delivery times vary by location. Please note that some products may not be available for international shipping due to country-specific import regulations. Additional customs duties and taxes may apply and are the responsibility of the recipient.'
+        answer: 'No, we only offer national shipping within Pakistan.'
       },
       {
         id: 'o3',
@@ -82,29 +82,29 @@ const FAQs = () => {
       {
         id: 'o4',
         question: 'Is there a minimum order amount?',
-        answer: 'There is no minimum order amount required to make a purchase. However, orders under $25 incur a small handling fee. Orders over $50 qualify for free standard shipping within the continental United States. We also offer periodic promotions that may include free shipping at different threshold amounts.'
+        answer: 'There is no minimum order amount. Shipping charges are 200 PKR per order.'
       },
     ],
     returns: [
       {
         id: 'r1',
         question: 'What is your return policy?',
-        answer: 'We offer a 30-day satisfaction guarantee on most products. If you\'re not completely satisfied with your purchase, you can return unopened products in their original packaging for a full refund, or opened products for store credit. Certain items like custom formulations and clearance products are final sale and cannot be returned unless defective.'
+        answer: 'We do not offer returns. We offer a check parcel before pay service: you can inspect your parcel before making payment.'
       },
       {
         id: 'r2',
         question: 'How do I initiate a return?',
-        answer: 'To initiate a return, please contact our customer service team or fill out the return form on our website. You\'ll need to provide your order number, the items you wish to return, and the reason for the return. Once approved, you\'ll receive return shipping instructions and a return authorization number.'
+        answer: 'We do not offer returns. Please check your parcel before paying.'
       },
       {
         id: 'r3',
         question: 'Who pays for return shipping?',
-        answer: 'Customers are responsible for return shipping costs unless the return is due to our error (such as sending the wrong product or a defective item). In these cases, we will provide a prepaid return shipping label. We recommend using a trackable shipping method for all returns.'
+        answer: 'We do not offer returns. There is no return shipping.'
       },
       {
         id: 'r4',
         question: 'How long do refunds take to process?',
-        answer: 'Once we receive your return, our team will inspect the items and process your refund within 3-5 business days. The refund will be issued to the original payment method used for the purchase. Please allow an additional 3-7 business days for the refund to appear in your account, depending on your financial institution.'
+        answer: 'We do not offer refunds. Please check your parcel before paying.'
       },
     ],
     account: [
@@ -268,7 +268,7 @@ const FAQs = () => {
                 </div>
                 <h3>Email Us</h3>
                 <p>Get a response within 24 hours</p>
-                <a href="mailto:support@herbalremedies.com" className={styles.helpButton}>
+                <a href="mailto:shinarawear@gmail.com" className={styles.helpButton}>
                   Send Email
                 </a>
               </div>
@@ -279,8 +279,8 @@ const FAQs = () => {
                 </div>
                 <h3>Call Us</h3>
                 <p>Available Mon-Fri, 9am to 6pm EST</p>
-                <a href="tel:+18005551234" className={styles.helpButton}>
-                  1-800-555-1234
+                <a href="tel:+923441320657" className={styles.helpButton}>
+                  +92 3441320657
                 </a>
               </div>
               

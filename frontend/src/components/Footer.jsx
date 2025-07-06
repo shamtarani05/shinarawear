@@ -61,7 +61,7 @@ const Footer = () => {
 
       <div className={styles.footerBottom}>
         <div className={styles.contactInfo}>
-          <p><strong>Contact:</strong> +1 (555) 123-TEES | <a href="mailto:hello@teezy.com">hello@teezy.com</a></p>
+          <p><strong>Contact:</strong> +92 3441320657 | <a href="mailto:shinarawear@gmail.com">shinarawear@gmail.com</a></p>
         </div>
         <div className={styles.copyright}>
           <p>&copy; {new Date().getFullYear()} Teezy. All rights reserved. | Designed with ❤️ for style lovers</p>

@@ -33,32 +33,24 @@ const ShippingPolicy = () => {
                 <div className={styles.highlightIcon}>
                   <Truck size={28} />
                 </div>
-                <h3>Shipping Methods</h3>
-                <p>Standard, Express, and International options available</p>
+                <h3>Shipping Method</h3>
+                <p>Standard Shipping (Pakistan only)</p>
               </div>
 
               <div className={styles.highlightCard}>
                 <div className={styles.highlightIcon}>
                   <Clock size={28} />
                 </div>
-                <h3>Processing Time</h3>
-                <p>Orders processed within 1-2 business days</p>
+                <h3>Delivery Time</h3>
+                <p>4-5 days after order confirmation</p>
               </div>
 
               <div className={styles.highlightCard}>
                 <div className={styles.highlightIcon}>
                   <Globe size={28} />
                 </div>
-                <h3>Global Delivery</h3>
-                <p>We ship to most countries worldwide</p>
-              </div>
-
-              <div className={styles.highlightCard}>
-                <div className={styles.highlightIcon}>
-                  <AlertCircle size={28} />
-                </div>
-                <h3>Order Tracking</h3>
-                <p>Track your order every step of the way</p>
+                <h3>Shipping Charges</h3>
+                <p>PKR 200 per order</p>
               </div>
             </div>
 
@@ -86,49 +78,22 @@ const ShippingPolicy = () => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Standard Shipping</td>
-                        <td>3-5 business days</td>
-                        <td>PKR 250 (Free on orders over PKR 3,000)</td>
-                      </tr>
-                      <tr>
-                        <td>Express Shipping</td>
-                        <td>1-2 business days</td>
-                        <td>PKR 600</td>
-                      </tr>
-                      <tr>
-                        <td>International Shipping</td>
-                        <td>7-14 business days</td>
-                        <td>Calculated at checkout</td>
+                        <td>Standard Shipping (Pakistan)</td>
+                        <td>4-5 days</td>
+                        <td>PKR 200</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className={styles.tableNote}>
-                  *Delivery times are estimates and not guaranteed. Transit times may vary based on 
-                  shipping destination and other factors outside our control.
-                </p>
-              </div>
-
-              <div className={styles.policySection}>
-                <h2>Order Tracking</h2>
-                <p>
-                  Once your order ships, you'll receive a tracking number via email. You can track your order 
-                  by clicking the tracking link in your shipping confirmation email or by logging into your account 
-                  on our website.
+                  *We only offer national shipping within Pakistan. Delivery times are estimates and not guaranteed. Transit times may vary based on destination and other factors outside our control.
                 </p>
               </div>
 
               <div className={styles.policySection}>
                 <h2>International Orders</h2>
                 <p>
-                  We ship to most countries worldwide. International orders may be subject to 
-                  import duties, taxes, and customs clearance fees, which are the responsibility of the recipient. 
-                  Shinara Wear has no control over these charges and cannot predict what they may be.
-                </p>
-                <p>
-                  Customs policies vary from country to country; please contact your local customs office for 
-                  more information. When customs clearance procedures are required, it can cause delays beyond 
-                  our original delivery estimates.
+                  We do not offer international shipping. Orders can only be delivered within Pakistan.
                 </p>
               </div>
 
@@ -159,27 +124,16 @@ const ShippingPolicy = () => {
                   the shipping carrier to resolve the issue.
                 </p>
               </div>
-
-              <div className={styles.policySection}>
-                <h2>COVID-19 Impact</h2>
-                <p>
-                  Due to the ongoing global situation, shipping carriers may experience delays. We are doing 
-                  our best to get your orders to you as quickly as possible, but some delays may be unavoidable. 
-                  We appreciate your understanding and patience.
-                </p>
-              </div>
             </div>
 
             <div className={styles.policyUpdated}>
-              <p>Last Updated: April 15, 2025</p>
+              <p>Last Updated: 1 July 2025</p>
             </div>
 
             <div className={styles.policyContact}>
-              <h3>Questions About Our Shipping Policy?</h3>
+              <h3>Shipping Policy</h3>
               <p>
-                If you have any questions about our shipping policy, please contact our customer service team 
-                at <a href="mailto:support@shinarawear.com">support@shinarawear.com</a> or call us at 
-                <a href="tel:+92211234567">+92 21 1234 567</a>.
+                We only offer national shipping within Pakistan. Shipping charges are 200 PKR per order. Delivery is within 4-5 days. We do not offer international shipping.
               </p>
             </div>
           </div>

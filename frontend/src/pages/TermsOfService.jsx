@@ -145,13 +145,7 @@ const TermsOfService = () => {
                     <h2 className={styles.sectionTitle}>4. Shipping & Delivery</h2>
                     <div className={styles.sectionContent}>
                       <p>
-                        We ship to addresses within Pakistan and to select international destinations. Shipping times are estimates and not guaranteed. We are not responsible for shipping delays caused by customs, weather, or other factors outside our control.
-                      </p>
-                      <p>
-                        Standard shipping is free for orders over PKR 3,000 within Pakistan. Additional shipping fees apply for express and international shipments.
-                      </p>
-                      <p>
-                        You will receive a shipping confirmation email with tracking information when your order ships. It is your responsibility to provide accurate shipping information.
+                        We only offer national shipping within Pakistan. Shipping charges are 200 PKR per order. Delivery is within 4-5 days. We do not offer international shipping.
                       </p>
                     </div>
                   </section>
@@ -160,16 +154,7 @@ const TermsOfService = () => {
                     <h2 className={styles.sectionTitle}>5. Returns & Refunds</h2>
                     <div className={styles.sectionContent}>
                       <p>
-                        We offer a 30-day satisfaction guarantee for most products. If you are not completely satisfied with your purchase, you may return it within 30 days of receipt for a full refund of the purchase price, minus shipping costs.
-                      </p>
-                      <p>
-                        To be eligible for a return, your item must be unworn, unwashed, and in the same condition that you received it. It must also be in the original packaging with all tags attached. Certain products, such as undergarments, cannot be returned once opened.
-                      </p>
-                      <p>
-                        To initiate a return, please contact our customer service team for a return merchandise authorization (RMA) number. Items returned without an RMA number may not be eligible for refund.
-                      </p>
-                      <p>
-                        Refunds will be issued to the original payment method used for the purchase. Please allow 10-14 business days for the refund to be processed after we receive your returned item.
+                        <strong>We do not offer returns or refunds.</strong> We offer a <strong>check parcel before pay</strong> service: you can inspect your parcel before making payment. Please ensure you are satisfied with your order at the time of delivery.
                       </p>
                     </div>
                   </section>
@@ -211,7 +196,7 @@ const TermsOfService = () => {
                     <h2 className={styles.sectionTitle}>9. Contact Information</h2>
                     <div className={styles.sectionContent}>
                       <p>
-                        If you have any questions about these Terms, please contact us at <a href="mailto:support@shinarawear.com">support@shinarawear.com</a> or call <a href="tel:+92211234567">+92 21 1234 567</a>.
+                        If you have any questions about these Terms, please contact us at <a href="mailto:shinarawear@gmail.com">shinarawear@gmail.com</a> or call <a href="tel:+923441320657">+92 3441320657</a>.
                       </p>
                     </div>
                   </section>

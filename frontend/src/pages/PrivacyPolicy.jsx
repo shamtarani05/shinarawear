@@ -217,8 +217,8 @@ const PrivacyPolicy = () => {
               <address className={styles.contactAddress}>
                 <p>Herbal Remedies, Inc.</p>
                 <p>123 Natural Way, Wellness Valley, CA 90210</p>
-                <p>Email: <a href="mailto:privacy@herbalremedies.com">privacy@herbalremedies.com</a></p>
-                <p>Phone: <a href="tel:+18005551234">1-800-555-1234</a></p>
+                <p>Email: <a href="mailto:shinarawear@gmail.com">shinarawear@gmail.com</a></p>
+                <p>Phone: <a href="tel:+923441320657">+92 3441320657</a></p>
               </address>
             </div>
           </div>

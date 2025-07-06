@@ -63,15 +63,11 @@ const CartPage = () => {
 
   // Calculate order details
   const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  // Free shipping threshold in PKR
-  const shippingThreshold = 3000;
-  let shipping = subtotal > shippingThreshold ? 0 : 250;
+  // Delivery charges always 200 PKR
+  let shipping = 200;
 
-  if (appliedPromo?.discountType === 'shipping') {
-    shipping = 0;
-  }
-
-  const tax = subtotal * 0.08;
+  // Set tax to 0
+  const tax = 0;
   
   // Calculate pre-discount total
   const preDiscountTotal = subtotal + tax + shipping;
@@ -319,7 +315,7 @@ const CartPage = () => {
                       </div>
                       <div className={styles.summaryRow}>
                         <span>Shipping</span>
-                        <span>{shipping === 0 ? 'FREE' : formatPKR(shipping)}</span>
+                        <span>{formatPKR(shipping)}</span>
                       </div>
                       <div className={styles.summaryRow}>
                         <span>Estimated Tax</span>
@@ -344,13 +340,11 @@ const CartPage = () => {
                     <div className={styles.shippingNote}>
                       <Truck size={16} />
                       <p>
-                        {subtotal > shippingThreshold
-                          ? 'Your order qualifies for FREE shipping!'
-                          : `Add ${formatPKR(shippingThreshold - subtotal)} more to qualify for FREE shipping`}
+                        Delivery charges are always PKR 200 per order.
                       </p>
                     </div>
 
-                    <div style={{ marginTop: 24, textAlign: 'right' }}>
+                    <div style={{ marginTop: 24, textAlign: 'center' }}>
                       <button
                         className={styles.checkoutButton}
                         onClick={() => navigate('/checkout')}
@@ -383,32 +377,6 @@ const CartPage = () => {
                 </button>
               </div>
             )}
-          </div>
-        </section>
-
-        <section className={styles.benefitsSection}>
-          <div className={styles.benefitsContainer}>
-            <div className={styles.benefitItem}>
-              <div className={styles.benefitIcon}>
-                <Truck size={24} />
-              </div>
-              <h3>Free Shipping</h3>
-              <p>On orders over {formatPKR(shippingThreshold)}</p>
-            </div>
-            <div className={styles.benefitItem}>
-              <div className={styles.benefitIcon}>
-                <RefreshCw size={24} />
-              </div>
-              <h3>30-Day Returns</h3>
-              <p>Hassle-free returns</p>
-            </div>
-            <div className={styles.benefitItem}>
-              <div className={styles.benefitIcon}>
-                <ShoppingCart size={24} />
-              </div>
-              <h3>Secure Checkout</h3>
-              <p>Safe & encrypted</p>
-            </div>
           </div>
         </section>
       </main>

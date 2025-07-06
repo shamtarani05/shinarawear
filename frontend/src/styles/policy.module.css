@@ -261,3 +261,90 @@
       min-width: 100%;
     }
   }
+
+  .affiliateHero {
+    background: linear-gradient(135deg, var(--color-ocean), var(--color-coral));
+    color: var(--color-white);
+    padding: 5rem 2rem 3rem 2rem;
+    text-align: center;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 8px 32px var(--color-shadow);
+  }
+  .affiliateHeroTitle {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .affiliateHeroSubtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--color-white);
+  }
+  .affiliateCard {
+    max-width: 600px;
+    margin: -4rem auto 2rem auto;
+    background: var(--color-white);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px var(--color-shadow);
+    padding: 2.5rem 2rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .affiliateList {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .affiliateList li {
+    background: var(--color-sage-light);
+    color: var(--color-forest);
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .affiliateCTA {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-coral);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .affiliateContact {
+    color: var(--color-ocean);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    .affiliateHeroTitle {
+      font-size: 2rem;
+    }
+    .affiliateHeroSubtitle {
+      font-size: 1.1rem;
+    }
+    .affiliateCard {
+      padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    }
+    .affiliateList li {
+      font-size: 1rem;
+      padding: 0.7rem 0.7rem;
+    }
+    .affiliateCTA {
+      font-size: 1.1rem;
+    }
+  }

@@ -6,7 +6,7 @@ import styles from '../styles/checkoutpage.module.css';
 import { apiUrl, formatPKR } from '../utils/api';
 
 const CheckoutPage = () => {
-  const { cart: cartItems, clearCart, appliedPromo, setAppliedPromo, clearAppliedPromo } = useCartStore();
+  const { cart: cartItems, clearCart, appliedPromo,  clearAppliedPromo } = useCartStore();
   const user = useAuthStore((state) => state.user);
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
@@ -28,8 +28,8 @@ const CheckoutPage = () => {
 
   // Calculate totals
   const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  const shipping = subtotal > 3000 ? 0 : 250;
-  const tax = subtotal * 0.08;
+  const shipping = 200; // Always 200 PKR
+  const tax = 0; // No tax
   let discount = 0;
   if (appliedPromo) {
     if (appliedPromo.discountType === 'percentage') {

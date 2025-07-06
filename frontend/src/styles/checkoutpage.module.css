@@ -60,10 +60,15 @@
 .totalRow {
   display: flex;
   justify-content: space-between;
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin: 12px 0 8px 0;
-  color: var(--color-primary, #2d3a4b);
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 18px 0 12px 0;
+  color: #222;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  letter-spacing: 0.5px;
 }
 .couponSection {
   display: flex;

@@ -31,6 +31,7 @@ import LoadingState from "./components/common/LoadingState";
 import CheckoutPage from "./pages/CheckoutPage";
 import NewArrivalsPage from './pages/NewArrivalsPage';
 import SalePage from './pages/SalePage';
+import Affiliate from "./pages/Affiliate";
 
 
 
@@ -129,6 +130,7 @@ function App() {
       <Route path="/checkout" element={<CheckoutPage />} />
       <Route path="/products/new-arrivals" element={<NewArrivalsPage />} />
       <Route path="/products/sale" element={<SalePage />} />
+      <Route path="/affiliate" element={<Affiliate />} />
       <Route path='/*' element={<NotFound />} />
       <Route path='product/:id' element={<MedicineDescriptionPage />} />
     </Routes>

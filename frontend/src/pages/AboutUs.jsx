@@ -71,27 +71,7 @@ const AboutUs = () => {
         </section>
 
         {/* Brand Partners Section */}
-        <section className={styles.partnersSection}>
-          <h2 className={styles.sectionTitle}>Our Brand Partners</h2>
-          <div className={styles.sliderWrapper}>
-            <button className={styles.sliderArrow} onClick={handlePrev} disabled={scrollIndex === 0} aria-label="Previous">
-              <ChevronLeft size={28} />
-            </button>
-            <div className={styles.partnersSlider} ref={sliderRef}>
-              {brandPartners.map((partner, idx) => (
-                <div className={styles.partnerCard} key={partner.name}>
-                  <div className={styles.partnerLogoCircle}>
-                    <img src={partner.img} alt={partner.name} className={styles.partnerLogoImg} />
-                  </div>
-                  <span className={styles.partnerName}>{partner.name}</span>
-                </div>
-              ))}
-            </div>
-            <button className={styles.sliderArrow} onClick={handleNext} disabled={scrollIndex === brandPartners.length - 1} aria-label="Next">
-              <ChevronRight size={28} />
-            </button>
-          </div>
-        </section>
+        {/* Removed brand partners section as requested */}
 
         {/* Company History */}
         <section className={styles.historySection}>
@@ -114,41 +94,30 @@ const AboutUs = () => {
         {/* Team Section */}
         <section className={styles.teamSection}>
           <h2 className={styles.sectionTitle}>Meet Our Team</h2>
-          <p className={styles.teamIntro}>
-            Our creative team brings together designers, stylists, and innovators passionate about redefining fashion in Pakistan and beyond.
-          </p>
           <div className={styles.teamGrid}>
             <div className={styles.teamMember}>
               <div className={styles.teamMemberImage}>
-                <img src="./shampic2.jpg" alt="Sham Tarani" className={styles.memberImg} />
+                <img src="/shampic2.jpg" alt="Shinara" className={styles.memberImg} />
               </div>
-              <h3 className={styles.memberName}>Sham Tarani</h3>
-              <p className={styles.memberTitle}>Founder & Creative Director</p>
-              <p className={styles.memberBio}>Visionary leader with a passion for bold, accessible fashion and empowering local talent.</p>
+              <h3 className={styles.memberName}>Shinara</h3>
+              <p className={styles.memberTitle}>Founder & Designer</p>
+              <p className={styles.memberBio}>Visionary founder and designer behind Shinara Wear, dedicated to creating bold, accessible fashion for all.</p>
             </div>
             <div className={styles.teamMember}>
               <div className={styles.teamMemberImage}>
-                <img src="./moizpic.jpg" alt="Abdul Moiz" className={styles.memberImg} />
+                <img src="/shampic2.jpg" alt="Sham" className={styles.memberImg} />
               </div>
-              <h3 className={styles.memberName}>Abdul Moiz</h3>
-              <p className={styles.memberTitle}>Head of Product & Sourcing</p>
-              <p className={styles.memberBio}>Ensures every Shinara piece meets our standards for quality, comfort, and style.</p>
+              <h3 className={styles.memberName}>Sham</h3>
+              <p className={styles.memberTitle}>CEO</p>
+              <p className={styles.memberBio}>Leads Shinara Wear with a vision for growth, innovation, and excellence in the fashion industry.</p>
             </div>
             <div className={styles.teamMember}>
               <div className={styles.teamMemberImage}>
-                <img src="https://via.placeholder.com/200" alt="Ayesha Khan" className={styles.memberImg} />
+                <img src="/shampic2.jpg" alt="Disha" className={styles.memberImg} />
               </div>
-              <h3 className={styles.memberName}>Ayesha Khan</h3>
-              <p className={styles.memberTitle}>Lead Designer</p>
-              <p className={styles.memberBio}>Creates our signature looks and keeps us ahead of the latest trends.</p>
-            </div>
-            <div className={styles.teamMember}>
-              <div className={styles.teamMemberImage}>
-                <img src="https://via.placeholder.com/200" alt="Bilal Ahmed" className={styles.memberImg} />
-              </div>
-              <h3 className={styles.memberName}>Bilal Ahmed</h3>
-              <p className={styles.memberTitle}>Marketing & Brand Manager</p>
-              <p className={styles.memberBio}>Connects Shinara Wear with our vibrant community and partners.</p>
+              <h3 className={styles.memberName}>Disha</h3>
+              <p className={styles.memberTitle}>Sales Manager</p>
+              <p className={styles.memberBio}>Drives sales and builds strong relationships with our valued customers and partners.</p>
             </div>
           </div>
         </section>

@@ -75,8 +75,7 @@ const Contact = () => {
               </div>
               <h3 className={styles.cardTitle}>Call Us</h3>
               <p className={styles.cardText}>
-                <a href="tel:+18005551234" className={styles.contactLink}>+1 (800) 555-1234</a><br />
-                <a href="tel:+18005551235" className={styles.contactLink}>+1 (800) 555-1235</a>
+                <a href="tel:+923441320657" className={styles.contactLink}>+92 3441320657</a>
               </p>
             </div>
 
@@ -86,8 +85,7 @@ const Contact = () => {
               </div>
               <h3 className={styles.cardTitle}>Email Us</h3>
               <p className={styles.cardText}>
-                <a href="mailto:info@herbalremedies.com" className={styles.contactLink}>info@herbalremedies.com</a><br />
-                <a href="mailto:support@herbalremedies.com" className={styles.contactLink}>support@herbalremedies.com</a>
+                <a href="mailto:shinarawear@gmail.com" className={styles.contactLink}>shinarawear@gmail.com</a>
               </p>
             </div>
 

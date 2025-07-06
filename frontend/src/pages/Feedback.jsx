@@ -279,8 +279,8 @@ const Feedback = () => {
                         </div>
                         <div>
                           <h4>Call Us</h4>
-                          <p>(800) 555-0123</p>
-                          <p className={styles.contactNote}>Mon-Fri: 9am-6pm EST</p>
+                          <p>+92 3441320657</p>
+                          <p className={styles.contactNote}>Mon-Fri: 9am-6pm</p>
                         </div>
                       </div>
                       
@@ -290,7 +290,7 @@ const Feedback = () => {
                         </div>
                         <div>
                           <h4>Email Support</h4>
-                          <p>support@ecoshop.com</p>
+                          <p>shinarawear@gmail.com</p>
                           <p className={styles.contactNote}>We respond within 24 hours</p>
                         </div>
                       </div>
