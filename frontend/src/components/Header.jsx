@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Search, MapPin, Download, ShoppingCart, User, ChevronDown, Clock, Heart } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/header.module.css';
@@ -8,8 +8,6 @@ import LoggedIn from './LoggedIn';
 import CompactAddressDropdown from './Address';
 
 export default function Header() {
-  const [searchQuery, setSearchQuery] = useState('');
-
   const cartItems = useCartStore((state) => state.cart);
   const user = useAuthStore((state) => state.user);
   const isLoggedIn = !!user; // Convert user object to boolean
@@ -34,14 +32,6 @@ export default function Header() {
     console.log('Logout success');
     localStorage.removeItem('token');
     clearUser();
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      // Navigate to search results page with the query
-      navigate(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
-    }
   };
 
   return (
@@ -93,20 +83,6 @@ export default function Header() {
             </button>
           </div>
         </div>
-
-        {/* Mobile Search Bar */}
-        <form onSubmit={handleSearch} className={styles.searchBarMobile}>
-          <input
-            type="text"
-            placeholder="Search Teezy..."
-            className={styles.searchInputMobile}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button type="submit" className={styles.searchButtonMobile}>
-            <Search className={styles.searchIconMobile} />
-          </button>
-        </form>
       </div>
 
       {/* Navigation Categories */}

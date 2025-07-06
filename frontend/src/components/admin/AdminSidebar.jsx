@@ -7,7 +7,8 @@ import {
   Users,
   Tag,
   Truck,
-  Settings
+  Settings,
+  FileText
 } from 'lucide-react';
 import styles from '../../styles/adminDashboard.module.css';
 
@@ -78,6 +79,7 @@ const AdminSidebar = ({ user }) => {
           <Truck size={18} />
           <span>Shipping</span>
         </Link> */}
+
         <Link 
           to="/admin/settings" 
           className={`${styles.adminNavLink} ${isActive('/admin/settings') ? styles.active : ''}`}

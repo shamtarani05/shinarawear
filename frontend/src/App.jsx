@@ -26,7 +26,6 @@ import EditProductPage from "./pages/EditProductPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import AdminSettingsPage from "./pages/AdminSettingsPage";
 import StoreLocator from "./pages/StoreLocator";
-import Blog from "./pages/Bolgs";
 import CareerPage from "./pages/CareerPage";
 import LoadingState from "./components/common/LoadingState";
 import CheckoutPage from "./pages/CheckoutPage";
@@ -126,7 +125,6 @@ function App() {
         </ProtectedAdminRoute>
       } />
       <Route path="/stores" element={<StoreLocator />} />
-      <Route path='/blog' element={<Blog />} />
       <Route path='/careers' element={<CareerPage />} />
       <Route path="/checkout" element={<CheckoutPage />} />
       <Route path="/products/new-arrivals" element={<NewArrivalsPage />} />
