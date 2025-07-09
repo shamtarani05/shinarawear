@@ -286,10 +286,6 @@
 }
 
 @media (max-width: 768px) {
-  .productsGrid {
-    grid-template-columns: 1fr;
-  }
-  
   .searchContainer {
     flex-direction: column;
     border-radius: 16px;
@@ -308,10 +304,6 @@
 }
 
 @media (max-width: 480px) {
-  .productsGrid {
-    grid-template-columns: 1fr;
-  }
-  
   .filterSection {
     padding: 1.5rem;
   }
@@ -334,7 +326,7 @@
   .mainContent {
     width: 100vw;
     max-width: 100vw;
-    padding: 0.5rem 0.5rem 0 0.5rem;
+    padding: 18px 2px 32px 2px;
     box-sizing: border-box;
     padding-top: 70px; /* Add top padding to avoid header overlap */
   }
@@ -351,7 +343,7 @@
   .productsGrid {
     width: 100%;
     margin: 0;
-    gap: 0.7rem;
+    gap: 12px;
   }
   .sectionTitle, h2 {
     font-size: 1.2rem;

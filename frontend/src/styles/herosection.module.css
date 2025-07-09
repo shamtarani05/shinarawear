@@ -1,4 +1,4 @@
-/* heroSection.module.css - Optimized and Simplified */
+/* heroSection.module.css - Artificial Jewelry Theme */
 
 .heroSection {
   position: relative;
@@ -8,29 +8,29 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Background Gradients - Simplified and Smooth */
-.slideBgMens {
-  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #3730a3 100%);
+/* Background Gradients - Jewelry Themed */
+.slideBgEarrings {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
 }
 
-.slideBgWomens {
-  background: linear-gradient(135deg, #fb7185 0%, #ec4899 50%, #9333ea 100%);
+.slideBgNecklaces {
+  background: linear-gradient(135deg, #ec4899 0%, #f472b6 50%, #f9a8d4 100%);
 }
 
-.slideBgEthnic {
-  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #dc2626 100%);
+.slideBgBracelets {
+  background: linear-gradient(135deg, #14b8a6 0%, #20d5ba 50%, #5eead4 100%);
 }
 
-.slideBgAccessories {
-  background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+.slideBgRings {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #fde047 100%);
 }
 
 .slideBgNewArrivals {
-  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 50%, #4338ca 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%);
 }
 
 .slideBgSale {
-  background: linear-gradient(135deg, #ef4444 0%, #ec4899 50%, #f43f5e 100%);
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 50%, #fca5a5 100%);
 }
 
 .slideBackground {
@@ -42,14 +42,14 @@
   transition: all 1s ease-in-out;
 }
 
-/* Simplified Background Pattern */
+/* Enhanced Background Pattern with Sparkles */
 .backgroundPattern {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.1;
+  opacity: 0.15;
   pointer-events: none;
 }
 
@@ -92,6 +92,38 @@
   animation-delay: 0.5s;
 }
 
+/* Sparkle Effects for Jewelry Theme */
+.sparkleEffect {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.sparkle1 {
+  top: 15%;
+  left: 15%;
+  width: 0.5rem;
+  height: 0.5rem;
+  animation-delay: 0s;
+}
+
+.sparkle2 {
+  top: 60%;
+  right: 25%;
+  width: 0.75rem;
+  height: 0.75rem;
+  animation-delay: 1s;
+}
+
+.sparkle3 {
+  bottom: 25%;
+  left: 60%;
+  width: 0.5rem;
+  height: 0.5rem;
+  animation-delay: 2s;
+}
+
 @keyframes gentleFloat {
   0%, 100% {
     transform: translateY(0px);
@@ -99,7 +131,18 @@
   }
   50% {
     transform: translateY(-10px);
-    opacity: 0.15;
+    opacity: 0.2;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -131,17 +174,18 @@
   text-align: center;
 }
 
-/* Brand Badge - Simplified */
+/* Brand Badge - Jewelry Themed */
 .brandBadge {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   align-self: center;
   width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .brandIcon {
@@ -153,23 +197,25 @@
   width: 2rem;
   height: 2rem;
   color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.brandIconMens { background-color: #3b82f6; }
-.brandIconWomens { background-color: #ec4899; }
-.brandIconEthnic { background-color: #f97316; }
-.brandIconAccessories { background-color: #14b8a6; }
-.brandIconNewArrivals { background-color: #8b5cf6; }
+.brandIconEarrings { background-color: #8b5cf6; }
+.brandIconNecklaces { background-color: #ec4899; }
+.brandIconBracelets { background-color: #14b8a6; }
+.brandIconRings { background-color: #f59e0b; }
+.brandIconNewArrivals { background-color: #3b82f6; }
 .brandIconSale { background-color: #ef4444; }
 
 .brandText {
   color: white;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.875rem;
   letter-spacing: 0.1em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Headlines - Cleaner Typography */
+/* Headlines - Enhanced for Jewelry */
 .headlineContainer {
   display: flex;
   flex-direction: column;
@@ -182,30 +228,32 @@
   color: white;
   line-height: 1.1;
   letter-spacing: -0.025em;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   margin: 0;
 }
 
 .subtitle {
   font-size: 1.25rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   letter-spacing: 0.15em;
   margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Description */
 .description {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 28rem;
   line-height: 1.6;
   margin: 0 auto;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* CTA Button - Enhanced */
+/* CTA Button - Jewelry Enhanced */
 .ctaButton {
-  background-color: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   color: #111827;
   padding: 1rem 2rem;
   border-radius: 9999px;
@@ -216,16 +264,33 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   align-self: center;
   width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transition: left 0.5s ease;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
 }
 
 .ctaButton:hover {
-  background-color: #f9fafb;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   transform: scale(1.05);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
 }
 
 .ctaButtonIcon {
@@ -244,7 +309,7 @@
   transform: translateX(0.25rem);
 }
 
-/* Category Indicator */
+/* Category Indicator - Jewelry Themed */
 .categoryIndicator {
   display: flex;
   align-items: center;
@@ -256,23 +321,35 @@
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 9999px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
 }
 
-.categoryDotMens { background-color: #3b82f6; }
-.categoryDotWomens { background-color: #ec4899; }
-.categoryDotEthnic { background-color: #f97316; }
-.categoryDotAccessories { background-color: #14b8a6; }
-.categoryDotNewArrivals { background-color: #8b5cf6; }
+.categoryDotEarrings { background-color: #8b5cf6; }
+.categoryDotNecklaces { background-color: #ec4899; }
+.categoryDotBracelets { background-color: #14b8a6; }
+.categoryDotRings { background-color: #f59e0b; }
+.categoryDotNewArrivals { background-color: #3b82f6; }
 .categoryDotSale { background-color: #ef4444; }
 
 .categoryText {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Product Image Section - Perfect Fit Optimization */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Product Image Section - Jewelry Enhanced */
 .productImageSection {
   position: relative;
   display: flex;
@@ -283,18 +360,19 @@
   position: relative;
 }
 
-/* Simplified Floating Frame Effects */
+/* Enhanced Floating Frame Effects */
 .floatingFrame1 {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(12px);
   border-radius: 1.5rem;
   transform: rotate(2deg) scale(1.02);
   transition: transform 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .floatingFrame2 {
@@ -303,21 +381,23 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
   backdrop-filter: blur(8px);
   border-radius: 1.5rem;
   transform: rotate(-1deg) scale(1.05);
   transition: transform 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Main Image Frame - Perfect Fit */
+/* Main Image Frame - Jewelry Enhanced */
 .mainImageFrame {
   position: relative;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+  backdrop-filter: blur(16px);
   padding: 1.5rem;
   border-radius: 1rem;
   transition: transform 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .mainImageFrame:hover {
@@ -339,16 +419,17 @@
   height: 20rem;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
 }
 
 .productImage {
   width: 100%;
-  height: 110%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
   transition: transform 0.7s ease;
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .mainImageFrame:hover .productImage {
@@ -362,23 +443,24 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.15) 0%, transparent 50%);
   pointer-events: none;
 }
 
-/* Floating Badge - Enhanced */
+/* Floating Badge - Jewelry Themed */
 .floatingBadge {
   position: absolute;
   top: -0.75rem;
   right: -0.75rem;
-  background-color: #fbbf24;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   color: #111827;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 700;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
   animation: subtleBounce 2s infinite;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 @keyframes subtleBounce {
@@ -393,41 +475,7 @@
   }
 }
 
-/* Navigation Buttons - Simplified */
-.navButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  color: white;
-  padding: 0.75rem;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-}
-
-.navButton:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.navButtonPrev {
-  left: 1.5rem;
-}
-
-.navButtonNext {
-  right: 1.5rem;
-}
-
-/* Pagination Dots - Cleaner */
+/* Pagination Dots - Jewelry Enhanced */
 .pagination {
   position: absolute;
   bottom: 1.5rem;
@@ -444,31 +492,34 @@
   cursor: pointer;
   transition: all 0.3s ease;
   height: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .paginationDotActive {
   width: 2rem;
-  background-color: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .paginationDotInactive {
   width: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .paginationDotInactive:hover {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
 }
 
-/* Brand Watermark */
+/* Brand Watermark - Jewelry Themed */
 .brandWatermark {
   position: absolute;
   bottom: 1rem;
   right: 1.5rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 0.875rem;
   font-weight: 300;
   letter-spacing: 0.1em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Design - Mobile First Approach */
@@ -544,14 +595,6 @@
   .imageWrapper {
     width: 16rem;
     height: 16rem;
-  }
-  
-  .navButtonPrev {
-    left: 1rem;
-  }
-  
-  .navButtonNext {
-    right: 1rem;
   }
 }
 

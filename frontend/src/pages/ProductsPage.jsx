@@ -198,11 +198,12 @@ const ProductsPage = () => {
                 </div>
                 <div className={styles.filterGroup}>
                   <label>Rating</label>
-                  <select className={styles.filterSelect} value={ratingFilter} onChange={(e) => { setRatingFilter(e.target.value); setSearchParams({ page: '1' }); }}>
+                  <select className={styles.filterSelect} value={ratingFilter} onChange={(e) => setRatingFilter(e.target.value)}>
                     <option value="all">All Ratings</option>
-                    <option value="4">4★ & Above</option>
-                    <option value="3">3★ & Above</option>
-                    <option value="2">2★ & Above</option>
+                    <option value="4">4 & up</option>
+                    <option value="3">3 & up</option>
+                    <option value="2">2 & up</option>
+                    <option value="1">1 & up</option>
                   </select>
                 </div>
                 <div className={styles.filterGroup}>
@@ -216,22 +217,17 @@ const ProductsPage = () => {
                 </div>
               </div>
             </div>
-
-            {filteredProducts.length > 0 ? (
-              <div className={styles.productsSection}>
-                <h2 className={styles.sectionTitle}>Products ({filteredProducts.length})</h2>
-                <div className={styles.productsGrid}>
-                  {filteredProducts.map(product => (
-                    <div key={product.id} className={styles.productGridItem}>
-                      <MedicineCard product={product} />
-                    </div>
-                  ))}
-                </div>
-                {totalPages > 1 && <div className={styles.paginationContainer}>{renderPagination()}</div>}
+            <div className={styles.productsSection}>
+              <h2 className={styles.sectionTitle}>Products ({filteredProducts.length})</h2>
+              <div className={styles.productsGrid}>
+                {filteredProducts.map((product) => (
+                  <div key={product._id || product.id} className={styles.productGridItem}>
+                    <MedicineCard product={product} />
+                  </div>
+                ))}
               </div>
-            ) : (
-              <p className={styles.noProducts}>No products found with the selected filters.</p>
-            )}
+            </div>
+            <div className={styles.paginationContainer}>{renderPagination()}</div>
           </>
         )}
       </main>

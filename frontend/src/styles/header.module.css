@@ -1,6 +1,6 @@
 /* Header Layout */
 .header {
-  width: 100%;
+  width: 100vw;
   background-color: var(--color-white);
   box-shadow: 0 2px 8px var(--color-shadow);
 }

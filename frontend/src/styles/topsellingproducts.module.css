@@ -64,8 +64,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
-  margin-top: 5vh;
+  padding: 0 2px;
   position: relative; /* Added positioning context for arrows */
 }
 
@@ -264,5 +263,30 @@
     font-size: 1rem;
     border-radius: 50%;
     border-width: 2px;
+  }
+  .container {
+    padding: 0 2px;
+    margin-top: 0;
+  }
+  .outerContainer {
+    padding: 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }

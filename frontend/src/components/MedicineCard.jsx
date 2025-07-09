@@ -6,7 +6,6 @@ import { formatPKR } from '../utils/api';
 
 export default function MedicineCard({ product }) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const [showInfo, setShowInfo] = useState(false);
   const navigate = useNavigate();
 
   const handleFavorite = (e) => {
@@ -20,10 +19,6 @@ export default function MedicineCard({ product }) {
     navigate('/product/' + product._id);
   };
 
-  const toggleInfo = (e) => {
-    e.stopPropagation(); // Stop event propagation
-    setShowInfo(!showInfo);
-  };
 
   const handleclick = () => {
     navigate('/product/' + product._id);
@@ -57,7 +52,7 @@ export default function MedicineCard({ product }) {
           <p className={styles.manufacturer}>By {product.brandName}</p>
 
           <div className={styles.priceContainer}>
-            <span className={styles.price}>{formatPKR(product.discountedPrice||product.price)}</span>
+            <span className={styles.price}>{formatPKR(product.discountedPrice || product.price)}</span>
             {product.discountedPrice && (
               <div className={styles.discountWrapper}>
                 <span className={styles.mrp}>MRP: <span className={styles.strikethrough}>{formatPKR(product.price)}</span></span>
@@ -90,50 +85,17 @@ export default function MedicineCard({ product }) {
 
           <div className={styles.buttonContainer}>
             <button
-              className={styles.addToCartButton}
+              className={`${styles.addToCartButton} ${styles.mobileHide}`}
               onClick={handleProductDetail}
               aria-label="View product details"
             >
               <ShoppingCart size={14} />
               View
             </button>
-            <button
-              className={styles.infoButton}
-              onClick={toggleInfo}
-              aria-label="Show medication information"
-            >
-              <Info size={14} />
-            </button>
+
           </div>
         </div>
 
-        {showInfo && (
-          <div className={styles.infoOverlay} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.infoPanel}>
-              <div className={styles.infoHeader}>
-                <h4 className={styles.infoTitle}>Medication Info</h4>
-                <button
-                  className={styles.closeButton}
-                  onClick={toggleInfo}
-                  aria-label="Close information"
-                >
-                  <X size={14} />
-                </button>
-              </div>
-              <div className={styles.infoContent}>
-                <p className={styles.infoDescription}>
-                  {product.description || "No description available for this product."}
-                </p>
-                {product.isPrescriptionRequired && (
-                  <div className={styles.infoAlert}>
-                    <AlertCircle size={12} />
-                    <span>Prescription required for purchase</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

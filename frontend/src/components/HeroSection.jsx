@@ -5,79 +5,67 @@ import styles from '../styles/herosection.module.css';
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Hero slider data for ShinAra Wear fashion categories
+  // Hero slider data for ShinAra Artificial Jewelry categories
   const heroSlides = [
     {
       id: 1,
-      category: "Men's Collection",
-      bgClass: styles.slideBgMens,
-      iconClass: styles.brandIconMens,
-      dotClass: styles.categoryDotMens,
-      title: "ELEVATE YOUR STYLE",
-      subtitle: "MEN'S PREMIUM COLLECTION",
-      tagline: "Sharp suits, casual comfort, and everything in between",
-      ctaText: "Shop Men's",
-      productImage: "./menscollection.jpg"
+      category: "Fashion Earrings",
+      bgClass: styles.slideBgEarrings,
+      iconClass: styles.brandIconEarrings,
+      dotClass: styles.categoryDotEarrings,
+      title: "STUNNING EARRINGS",
+      subtitle: "FASHION EARRING COLLECTION",
+      tagline: "From hoops to studs, chandeliers to drops - perfect for every occasion",
+      ctaText: "Shop Earrings",
+      productImage: "./earings.jpg"
     },
     {
       id: 2,
-      category: "Women's Collection", 
-      bgClass: styles.slideBgWomens,
-      iconClass: styles.brandIconWomens,
-      dotClass: styles.categoryDotWomens,
-      title: "UNLEASH YOUR ELEGANCE",
-      subtitle: "WOMEN'S LUXURY WEAR",
-      tagline: "From boardroom power to weekend chic",
-      ctaText: "Explore Women's",
-      productImage: "./womenscollection.jpg"
+      category: "Statement Necklaces", 
+      bgClass: styles.slideBgNecklaces,
+      iconClass: styles.brandIconNecklaces,
+      dotClass: styles.categoryDotNecklaces,
+      title: "BOLD & BEAUTIFUL",
+      subtitle: "NECKLACE COLLECTION",
+      tagline: "Chokers, pendants, and statement pieces that make heads turn",
+      ctaText: "Explore Necklaces",
+      productImage: "./necklace.jpg"
     },
-    // {
-    //   id: 3,
-    //   category: "Ethnic Wear",
-    //   bgClass: styles.slideBgEthnic,
-    //   iconClass: styles.brandIconEthnic,
-    //   dotClass: styles.categoryDotEthnic,
-    //   title: "HERITAGE MEETS HAUTE",
-    //   subtitle: "ETHNIC COUTURE COLLECTION",
-    //   tagline: "Traditional craftsmanship with contemporary flair",
-    //   ctaText: "Shop Ethnic",
-    //   productImage: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=400&fit=crop&crop=center"
-    // },
-    // {
-    //   id: 4,
-    //   category: "Accessories",
-    //   bgClass: styles.slideBgAccessories,
-    //   iconClass: styles.brandIconAccessories,
-    //   dotClass: styles.categoryDotAccessories,
-    //   title: "PERFECT THE DETAILS",
-    //   subtitle: "SIGNATURE ACCESSORIES",
-    //   tagline: "The finishing touches that make all the difference",
-    //   ctaText: "View Accessories",
-    //   productImage: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center"
-    // },
+    {
+      id: 3,
+      category: "Bracelets & Bangles",
+      bgClass: styles.slideBgBracelets,
+      iconClass: styles.brandIconBracelets,
+      dotClass: styles.categoryDotBracelets,
+      title: "WRIST ELEGANCE",
+      subtitle: "BRACELET COLLECTION",
+      tagline: "Delicate chains, bold bangles, and charm bracelets",
+      ctaText: "Shop Bracelets",
+      productImage: "./bracelet.jpeg"
+    },
+    {
+      id: 4,
+      category: "Rings Collection",
+      bgClass: styles.slideBgRings,
+      iconClass: styles.brandIconRings,
+      dotClass: styles.categoryDotRings,
+      title: "RING PERFECTION",
+      subtitle: "FASHION RING COLLECTION",
+      tagline: "Cocktail rings, stackable bands, and everyday essentials",
+      ctaText: "View Rings",
+      productImage: "./ring.jpg"
+    },
     {
       id: 5,
       category: "New Arrivals",
       bgClass: styles.slideBgNewArrivals,
       iconClass: styles.brandIconNewArrivals,
       dotClass: styles.categoryDotNewArrivals,
-      title: "FRESH OFF THE RUNWAY",
-      subtitle: "NEW ARRIVALS WEEKLY",
-      tagline: "Stay ahead of trends with our latest drops",
+      title: "FRESH DESIGNS",
+      subtitle: "NEW JEWELRY ARRIVALS",
+      tagline: "Latest trendy pieces straight from fashion capitals",
       ctaText: "See What's New",
-      productImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=400&fit=crop&crop=center"
-    },
-    {
-      id: 6,
-      category: "Sale",
-      bgClass: styles.slideBgSale,
-      iconClass: styles.brandIconSale,
-      dotClass: styles.categoryDotSale,
-      title: "UNMISSABLE DEALS",
-      subtitle: "UP TO 10% OFF",
-      tagline: "Premium fashion at prices that don't break the bank",
-      ctaText: "Shop Sale",
-      productImage: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=400&h=400&fit=crop&crop=center"
+      productImage: "./newarrival.jpg"
     }
   ];
 
@@ -105,6 +93,9 @@ const HeroSection = () => {
           <div className={`${styles.floatingCircle} ${styles.floatingCircle2}`}></div>
           <div className={`${styles.floatingCircle} ${styles.floatingCircle3}`}></div>
           <div className={`${styles.floatingCircle} ${styles.floatingCircle4}`}></div>
+          <div className={`${styles.sparkleEffect} ${styles.sparkle1}`}></div>
+          <div className={`${styles.sparkleEffect} ${styles.sparkle2}`}></div>
+          <div className={`${styles.sparkleEffect} ${styles.sparkle3}`}></div>
         </div>
       </div>
 
@@ -122,7 +113,7 @@ const HeroSection = () => {
                 </svg>
               </div>
               <span className={styles.brandText}>
-                SHINARA WEAR
+                SHINARA JEWELRY
               </span>
             </div>
 
@@ -175,7 +166,7 @@ const HeroSection = () => {
                     alt={currentSlideData.category}
                     className={styles.productImage}
                     onError={(e) => {
-                      e.target.src = "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=400&fit=crop&crop=center";
+                      e.target.src = "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop&crop=center";
                     }}
                   />
                   
@@ -185,16 +176,13 @@ const HeroSection = () => {
                 
                 {/* Floating badge */}
                 <div className={styles.floatingBadge}>
-                  NEW
+                  TRENDY
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Navigation Buttons */}
-   
 
       {/* Pagination Dots */}
       <div className={styles.pagination}>
@@ -213,7 +201,7 @@ const HeroSection = () => {
 
       {/* Brand watermark */}
       <div className={styles.brandWatermark}>
-        SHINARA WEAR
+        SHINARAWEAR
       </div>
     </section>
   );

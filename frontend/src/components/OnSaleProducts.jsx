@@ -8,11 +8,6 @@ import { apiUrl } from '../utils/api';
 const OnSaleProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsToShow, setItemsToShow] = useState(4);
-  const [isHovering, setIsHovering] = useState(false);
-  const sliderRef = useRef(null);
-  const intervalRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,59 +26,6 @@ const OnSaleProducts = () => {
     };
     fetchOnSaleProducts();
   }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 640) setItemsToShow(1);
-      else if (width < 900) setItemsToShow(2);
-      else if (width < 1200) setItemsToShow(3);
-      else setItemsToShow(4);
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const totalSlides = Math.max(0, products.length - itemsToShow);
-
-  const nextSlide = useCallback(() => {
-    if (currentIndex >= totalSlides) {
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex(prev => prev + 1);
-    }
-  }, [currentIndex, totalSlides]);
-
-  const prevSlide = useCallback(() => {
-    if (currentIndex <= 0) {
-      setCurrentIndex(totalSlides);
-    } else {
-      setCurrentIndex(prev => prev - 1);
-    }
-  }, [currentIndex, totalSlides]);
-
-  useEffect(() => {
-    if (!isHovering && totalSlides > 0) {
-      intervalRef.current = setInterval(() => {
-        nextSlide();
-      }, 5000);
-    }
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [nextSlide, isHovering, totalSlides]);
-
-  const slideStyle = {
-    transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
-    transition: 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)',
-  };
-
-  const handleViewAll = () => {
-    navigate('/products/sale');
-  };
 
   if (loading) {
     return (
@@ -106,56 +48,14 @@ const OnSaleProducts = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>On Sale</h2>
-          <button onClick={handleViewAll} className={styles.viewAllButton}>
+          <button onClick={() => navigate('/products/sale')} className={styles.viewAllButton}>
             VIEW ALL
           </button>
         </div>
         <div className={styles.decorativeLine}></div>
-        <div className={styles.sliderNavButtons}>
-          <button 
-            onClick={prevSlide} 
-            className={`${styles.arrowBtn} ${currentIndex === 0 ? styles.disabled : styles.active}`}
-            aria-label="Previous sale product"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button 
-            onClick={nextSlide} 
-            className={`${styles.arrowBtn} ${currentIndex >= totalSlides ? styles.disabled : styles.active}`}
-            aria-label="Next sale product"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
-        <div 
-          className={styles.sliderWrapper}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-        >
-          <div 
-            ref={sliderRef} 
-            className={styles.slider} 
-            style={slideStyle}
-          >
-            {products.map((product) => (
-              <div 
-                key={product._id || product.id} 
-                className={styles.slide} 
-                style={{ width: `${100 / itemsToShow}%` }}
-              >
-                <MedicineCard product={product} />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className={styles.indicators}>
-          {Array.from({ length: totalSlides + 1 }, (_, index) => (
-            <button
-              key={index}
-              className={`${styles.indicator} ${index === currentIndex ? styles.indicatorActive : ''}`}
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+        <div className={styles.grid}>
+          {products.map((product) => (
+            <MedicineCard key={product._id || product.id} product={product} />
           ))}
         </div>
       </div>
