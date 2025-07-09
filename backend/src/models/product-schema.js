@@ -9,9 +9,17 @@ const productSchema = new Schema({
     category: { 
         type: String, 
         required: true,
-        enum: ["Men's Collection", "Women's Collection", "Ethnic Wear", "Accessories", "New Arrivals", "Sale"]
+        enum: [ "Earrings",
+            "Necklaces",
+            "Bracelets",
+            "Rings",
+            "Anklets",
+            "Nose Pins",
+            "Bangles",
+            "Maang Tikka",
+            "Pendant Sets",
+            "Chokers"]
     },
-    subCategory: { type: String, required: true },
     discountedPrice: { type: Number, min: 0 },
     discount: { type: Number, min: 0, max: 100, default: 0 },
     quantity: { type: Number, required: true, min: 0, default: 0 },
@@ -23,22 +31,17 @@ const productSchema = new Schema({
     deliveryTime: { type: String, default: '2-3 days' },
     rating: { type: Number, min: 0, max: 5, default: 0 },
     reviewCount: { type: Number, min: 0, default: 0 },
-    description: { type: String, required: true },
+    description: { type: String},
     
     // Clothing-specific fields
-    material: { type: String, required: true },
-    colors: { type: [String], required: true },
-    sizes: { type: [String], required: true },
-    fit: { 
-        type: String,
-        enum: ['Slim Fit', 'Regular Fit', 'Loose Fit', 'Oversized', 'Tailored']
-    },
+    colors: { type: [String]},
+    sizes: { type: [String]},
+    
     careInstructions: { type: String },
     season: { 
         type: String,
         enum: ['Spring', 'Summer', 'Autumn', 'Winter', 'All Season']
     },
-    pattern: { type: String },
     occasion: { 
         type: String,
         enum: ['Casual', 'Formal', 'Party', 'Wedding', 'Sports', 'Beach', 'Office']
@@ -81,7 +84,7 @@ productSchema.pre('save', function(next) {
 });
 
 // Index for better query performance
-productSchema.index({ category: 1, subCategory: 1 });
+productSchema.index({ category: 1 });
 productSchema.index({ brandName: 1 });
 productSchema.index({ price: 1 });
 productSchema.index({ stockStatus: 1 });
@@ -112,12 +115,8 @@ productSchema.methods.getMainImage = function() {
 };
 
 // Static method to find products by category
-productSchema.statics.findByCategory = function(category, subCategory = null) {
-    const query = { category };
-    if (subCategory) {
-        query.subCategory = subCategory;
-    }
-    return this.find(query);
+productSchema.statics.findByCategory = function(category) {
+    return this.find({ category });
 };
 
 // Static method to find products in stock

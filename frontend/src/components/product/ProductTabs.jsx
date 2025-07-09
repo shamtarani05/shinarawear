@@ -164,7 +164,7 @@ export default function ProductTabs({ productData, activeTab, setActiveTab }) {
                     'name', 'brandName', 'composition', 'formula', 'packSize', 'mfgDate', 'expDate',
                     'price', 'discountedPrice', 'discount', 'rating', 'reviewCount', 'stockStatus',
                     'deliveryTime', 'description', 'keyBenefits', 'sideEffects', 'usageDirections',
-                    'prescriptionRequired', 'images', 'similarProducts', 'id', 'category', 'subCategory',
+                    'prescriptionRequired', 'images', 'similarProducts', 'id', 'category',
                     '_id', '__v', 'createdAt', 'updatedAt', 'quantity'
                   ];
 

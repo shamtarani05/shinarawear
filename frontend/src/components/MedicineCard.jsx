@@ -57,8 +57,8 @@ export default function MedicineCard({ product }) {
           <p className={styles.manufacturer}>By {product.brandName}</p>
 
           <div className={styles.priceContainer}>
-            <span className={styles.price}>{formatPKR(product.discountedPrice)}</span>
-            {product.price && (
+            <span className={styles.price}>{formatPKR(product.discountedPrice||product.price)}</span>
+            {product.discountedPrice && (
               <div className={styles.discountWrapper}>
                 <span className={styles.mrp}>MRP: <span className={styles.strikethrough}>{formatPKR(product.price)}</span></span>
                 {product.discount && <span className={styles.discount}>{product.discount}% OFF</span>}

@@ -65,12 +65,12 @@ export default function ProductInfo({ product, addToCart, getItemQuantity, cart 
         }
         return;
       }
-      
+      console.log(product)
       const itemToAdd = {
         id: product._id || product.id, // Ensure consistent ID usage
         name: product.name,
         price: product.discountedPrice || product.price,
-        image: product.images?.[0] || "/api/placeholder/100/100",
+        images: product.images || [], // Store full images array
         quantity: quantity,
         brandName: product.brandName,
         category: product.category,

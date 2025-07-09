@@ -7,45 +7,73 @@ import styles from '../styles/categories.module.css';
 const categories = [
   { 
     id: 1, 
-    name: "Men's Collection", 
-    icon: "👔", 
+    name: "Earrings", 
+    icon: "💎", 
     color: "var(--color-charcoal)",
     gradient: "var(--gradient-primary)"
   },
   { 
     id: 2, 
-    name: "Women's Collection", 
-    icon: "👗", 
+    name: "Necklaces", 
+    icon: "📿", 
     color: "var(--color-coral)",
     gradient: "var(--gradient-sunset)"
   },
   { 
     id: 3, 
-    name: "Ethnic Wear", 
-    icon: "🥻", 
+    name: "Bracelets", 
+    icon: "⚡", 
     color: "var(--color-lavender)",
     gradient: "var(--gradient-premium)"
   },
   { 
     id: 4, 
-    name: "Accessories", 
-    icon: "👜", 
+    name: "Rings", 
+    icon: "💍", 
     color: "var(--color-sage)",
     gradient: "var(--gradient-secondary)"
   },
   { 
     id: 5, 
-    name: "New Arrivals", 
-    icon: "✨", 
+    name: "Anklets", 
+    icon: "🦶", 
     color: "var(--color-sunshine)",
     gradient: "var(--gradient-ocean)"
   },
   { 
     id: 6, 
-    name: "Sale", 
-    icon: "🏷️", 
+    name: "Nose Pins", 
+    icon: "✨", 
     color: "var(--color-coral)",
     gradient: "var(--gradient-trendy)"
+  },
+  { 
+    id: 7, 
+    name: "Bangles", 
+    icon: "🌟", 
+    color: "var(--color-charcoal)",
+    gradient: "var(--gradient-primary)"
+  },
+  { 
+    id: 8, 
+    name: "Maang Tikka", 
+    icon: "👑", 
+    color: "var(--color-lavender)",
+    gradient: "var(--gradient-premium)"
+  },
+  { 
+    id: 9, 
+    name: "Pendant Sets", 
+    icon: "🎭", 
+    color: "var(--color-sage)",
+    gradient: "var(--gradient-secondary)"
+  },
+  { 
+    id: 10, 
+    name: "Chokers", 
+    icon: "🔗", 
+    color: "var(--color-sunshine)",
+    gradient: "var(--gradient-ocean)"
   }
 ];
 
@@ -150,7 +178,7 @@ const CategorySection = () => {
           >
             {categories.map((category) => (
               <Link 
-                to={`/products/${category.name.toLowerCase().replace(/['\s]/g, '-')}`} 
+                to={`/collections/${category.name.toLowerCase().replace(/['\s]/g, '-')}`} 
                 key={category.id} 
                 className={styles.slide} 
                 style={{ width: `${100 / itemsToShow}%` }}

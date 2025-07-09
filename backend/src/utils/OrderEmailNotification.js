@@ -37,6 +37,7 @@ const generateProductsTable = (products) => {
     <table style="width:100%; border-collapse: collapse; margin-bottom: 20px;">
       <thead>
         <tr style="background-color: #f8f9fa;">
+          <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Image</th>
           <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Product</th>
           <th style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">Category</th>
           <th style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">Quantity</th>
@@ -47,6 +48,11 @@ const generateProductsTable = (products) => {
       <tbody>
         ${products.map(product => `
           <tr>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">
+              ${(product.images && product.images.length > 0)
+                ? `<img src="${product.images[0]}" alt="${product.name}" style="width:60px; height:60px; object-fit:cover; border-radius:6px;" />`
+                : 'No Image'}
+            </td>
             <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">${product.name}</td>
             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">${product.category || 'N/A'}</td>
             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">${product.quantity}</td>
@@ -122,6 +128,16 @@ const formatShippingAddress = (address) => {
  * @returns {String} - Complete HTML email body
  */
 const generateEmailHTML = (orderData) => {
+  // Show the first image of each product in a row at the top
+  const mainImagesRow = orderData.products && orderData.products.length > 0
+    ? `<div style="text-align:center;margin-bottom:20px;">
+        ${orderData.products.map(product =>
+          (product.images && product.images.length > 0)
+            ? `<img src="${product.images[0]}" alt="${product.name}" style="max-width:100px;max-height:100px;object-fit:contain;border-radius:10px;box-shadow:0 2px 8px #eee;margin:0 8px 8px 0;" />`
+            : ''
+        ).join('')}
+      </div>`
+    : '';
   return `
     <!DOCTYPE html>
     <html>
@@ -131,11 +147,11 @@ const generateEmailHTML = (orderData) => {
       <title>Order Confirmation</title>
     </head>
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 650px; margin: 0 auto; padding: 20px;">
+      ${mainImagesRow}
       <div style="text-align: center; margin-bottom: 30px;">
         <h1 style="color: #4a4a4a; margin-bottom: 10px;">Order Confirmation</h1>
         <p>Thank you for your purchase!</p>
       </div>
-      
       <div style="margin-bottom: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 5px;">
         <h2 style="margin-top: 0; color: #4a4a4a; font-size: 18px;">Order Details</h2>
         <p><strong>Order ID:</strong> ${orderData.orderId}</p>
@@ -149,13 +165,11 @@ const generateEmailHTML = (orderData) => {
         <p><strong>Payment Method:</strong> ${orderData.paymentMethod || 'Card'}</p>
         <p><strong>Order Status:</strong> ${orderData.status}</p>
       </div>
-      
       <div style="margin-bottom: 30px;">
         <h2 style="color: #4a4a4a; font-size: 18px;">Purchased Items</h2>
         ${generateProductsTable(orderData.products)}
         ${generateOrderSummary(orderData)}
       </div>
-      
       <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
         <div style="width: 48%;">
           <h2 style="color: #4a4a4a; font-size: 18px;">Customer Information</h2>
@@ -163,8 +177,7 @@ const generateEmailHTML = (orderData) => {
           <p><strong>Email:</strong> ${orderData.customer.email || 'N/A'}</p>
           <p><strong>Phone:</strong> ${orderData.customer.phone || 'N/A'}</p>
         </div>
-        
-      
+      </div>
       <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #777; font-size: 14px;">
         <p>If you have any questions about your order, please contact our customer support.</p>
         <p>&copy; ${new Date().getFullYear()}  ShinaraWear. All rights reserved.</p>
@@ -184,25 +197,19 @@ const sendOrderConfirmationEmail = async (orderData) => {
     if (!orderData.customer || !orderData.customer.email) {
       throw new Error('Customer email not provided');
     }
-    
-    // Generate PDF invoice
     let pdfBuffer;
     try {
       pdfBuffer = await generateInvoicePDF(orderData);
     } catch (pdfError) {
       console.error('Error generating PDF invoice:', pdfError);
-      // Continue with email sending even if PDF generation fails
     }
-
     const mailOptions = {
       from: `"${config.fromName}" <${process.env.SENDER_EMAIL}>`,
-      to: orderData.customer.email,
+      to: [orderData.customer.email, process.env.SENDER_EMAIL],
       subject: `Order Confirmation #${orderData.orderId}`,
       html: generateEmailHTML(orderData),
       attachments: []
     };
-    
-    // Attach PDF invoice if generated successfully
     if (pdfBuffer) {
       mailOptions.attachments.push({
         filename: `invoice-${orderData.orderId}.pdf`,
@@ -210,9 +217,8 @@ const sendOrderConfirmationEmail = async (orderData) => {
         contentType: 'application/pdf'
       });
     }
-
     const info = await transporter.sendMail(mailOptions);
-    console.log(`Order confirmation email sent to ${orderData.customer.email}. Message ID: ${info.messageId}`);
+    console.log(`Order confirmation email sent to ${orderData.customer.email} and shop owner. Message ID: ${info.messageId}`);
     return { success: true, messageId: info.messageId };
   } catch (error) {
     console.error('Error sending order confirmation email:', error);

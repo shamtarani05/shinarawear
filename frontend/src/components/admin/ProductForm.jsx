@@ -2,62 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Plus, X, Upload, AlertCircle } from 'lucide-react';
 import styles from '../../styles/addProduct.module.css';
 
-const categoryStructure = {
-  "Men's Collection": [
-    "Shirts",
-    "T-Shirts",
-    "Jeans",
-    "Trousers",
-    "Suits",
-    "Jackets",
-    "Sweaters",
-    "Shorts",
-    "Activewear",
-    "Underwear"
-  ],
-  "Women's Collection": [
-    "Tops",
-    "Dresses",
-    "Jeans",
-    "Trousers",
-    "Skirts",
-    "Blouses",
-    "Jackets",
-    "Sweaters",
-    "Activewear",
-    "Lingerie"
-  ],
-  "Ethnic Wear": [
-    "Kurtas",
-    "Shalwar Kameez",
-    "Lehengas",
-    "Sarees",
-    "Sherwanis",
-    "Churidars",
-    "Dupattas",
-    "Traditional Jackets"
-  ],
-  "Accessories": [
-    "Bags",
-    "Belts",
-    "Watches",
-    "Jewelry",
-    "Scarves",
-    "Hats",
-    "Sunglasses",
-    "Wallets"
-  ],
-  "New Arrivals": [
-    "Latest Trends",
-    "Seasonal Collection",
-    "Featured Items"
-  ],
-  "Sale": [
-    "Clearance",
-    "End of Season",
-    "Special Offers"
-  ]
-};
+const jewelryCategories = [
+  "Earrings",
+  "Necklaces",
+  "Bracelets",
+  "Rings",
+  "Anklets",
+  "Nose Pins",
+  "Bangles",
+  "Maang Tikka",
+  "Pendant Sets",
+  "Chokers"
+];
 
 const fitOptions = ['Slim Fit', 'Regular Fit', 'Loose Fit', 'Oversized', 'Tailored'];
 const seasonOptions = ['Spring', 'Summer', 'Autumn', 'Winter', 'All Season'];
@@ -76,18 +32,8 @@ const ProductForm = ({
   const [keyFeatures, setKeyFeatures] = useState(initialValues.keyFeatures || ['']);
   const [sizeChart, setSizeChart] = useState(initialValues.sizeChart || ['']);
   const [sizes, setSizes] = useState(initialValues.sizes || ['']);
-  const [colors, setColors] = useState(initialValues.colors || ['']);
   const [imageFiles, setImageFiles] = useState([]);
   const [imagePreviewUrls, setImagePreviewUrls] = useState([]);
-
-  // Update subcategory when main category changes
-  useEffect(() => {
-    const availableSubCategories = categoryStructure[formData.category] || [];
-    setFormData(prev => ({
-      ...prev,
-      subCategory: availableSubCategories[0] || ''
-    }));
-  }, [formData.category]);
 
   // Handle text input changes
   const handleInputChange = (e) => {
@@ -99,7 +45,7 @@ const ProductForm = ({
     }
   };
 
-  // Array handlers (keyFeatures, sizeChart, sizes, colors)
+  // Array handlers (keyFeatures, sizeChart, sizes)
   const handleAddKeyFeature = () => setKeyFeatures([...keyFeatures, '']);
   const handleKeyFeatureChange = (index, value) => {
     const newKeyFeatures = [...keyFeatures];
@@ -124,21 +70,10 @@ const ProductForm = ({
   };
   const handleRemoveSize = (index) => setSizes(sizes.filter((_, i) => i !== index));
 
-  const handleAddColor = () => setColors([...colors, '']);
-  const handleColorChange = (index, value) => {
-    const newColors = [...colors];
-    newColors[index] = value;
-    setColors(newColors);
-  };
-  const handleRemoveColor = (index) => setColors(colors.filter((_, i) => i !== index));
-
-  // Update formData when sizes/colors/keyFeatures/sizeChart change
+  // Update formData when sizes/keyFeatures/sizeChart change
   useEffect(() => {
     setFormData(prev => ({ ...prev, sizes: sizes.filter(s => s.trim() !== '') }));
   }, [sizes]);
-  useEffect(() => {
-    setFormData(prev => ({ ...prev, colors: colors.filter(c => c.trim() !== '') }));
-  }, [colors]);
   useEffect(() => {
     setFormData(prev => ({ ...prev, keyFeatures: keyFeatures.filter(f => f.trim() !== '') }));
   }, [keyFeatures]);
@@ -183,7 +118,6 @@ const ProductForm = ({
       keyFeatures,
       sizeChart,
       sizes,
-      colors,
     });
   };
 
@@ -203,7 +137,7 @@ const ProductForm = ({
               onChange={handleInputChange}
               required
               className={styles.formControl}
-              placeholder="e.g., Men's Cotton Casual Shirt"
+              placeholder="e.g., Gold Plated Earrings"
             />
           </div>
           <div className={styles.formRow}>
@@ -217,7 +151,7 @@ const ProductForm = ({
                 onChange={handleInputChange}
                 required
                 className={styles.formControl}
-                placeholder="e.g., Shinara Wear"
+                placeholder="e.g., Elegant Jewels"
               />
             </div>
             <div className={styles.formGroup}>
@@ -230,89 +164,24 @@ const ProductForm = ({
                 required
                 className={styles.formControl}
               >
-                {Object.keys(categoryStructure).map(category => (
+                <option value="">Select Category</option>
+                {jewelryCategories.map(category => (
                   <option key={category} value={category}>{category}</option>
                 ))}
               </select>
             </div>
           </div>
-          <div className={styles.formRow}>
-            <div className={styles.formGroup}>
-              <label htmlFor="subCategory">Sub Category*</label>
-              <select 
-                id="subCategory" 
-                name="subCategory" 
-                value={formData.subCategory}
-                onChange={handleInputChange}
-                required
-                className={styles.formControl}
-              >
-                {(categoryStructure[formData.category] || []).map(subCategory => (
-                  <option key={subCategory} value={subCategory}>{subCategory}</option>
-                ))}
-              </select>
-            </div>
-            <div className={styles.formGroup}>
-              <label>Colors*</label>
-              {colors.map((color, idx) => (
-                <div key={idx} className={styles.arrayInputContainer}>
-                  <input
-                    type="text"
-                    value={color}
-                    onChange={e => handleColorChange(idx, e.target.value)}
-                    className={`${styles.formControl} ${styles.arrayInput}`}
-                    placeholder={`Color ${idx + 1} (e.g., Navy Blue)`}
-                    required
-                  />
-                  <button type="button" className={styles.removeButton} onClick={() => handleRemoveColor(idx)}>
-                    <X size={16} />
-                  </button>
-                </div>
-              ))}
-              <button type="button" className={styles.addButton} onClick={handleAddColor}>
-                <Plus size={16} /> <span>Add Color</span>
-              </button>
-            </div>
-          </div>
           <div className={styles.formGroup}>
-            <label htmlFor="description">Product Description*</label>
+            <label htmlFor="description">Product Description</label>
             <textarea 
               id="description" 
               name="description" 
               value={formData.description}
               onChange={handleInputChange}
-              required
               className={`${styles.formControl} ${styles.formTextarea}`}
               rows="4"
               placeholder="Describe the product features, style, and benefits..."
             />
-          </div>
-          <div className={styles.formRow}>
-            <div className={styles.formGroup}>
-              <label htmlFor="material">Material*</label>
-              <input 
-                type="text" 
-                id="material" 
-                name="material" 
-                value={formData.material}
-                onChange={handleInputChange}
-                required
-                className={styles.formControl}
-                placeholder="e.g., 100% Cotton, Polyester Blend"
-              />
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="pattern">Pattern</label>
-              <input 
-                type="text" 
-                id="pattern" 
-                name="pattern" 
-                value={formData.pattern}
-                onChange={handleInputChange}
-                className={styles.formControl}
-                placeholder="e.g., Solid, Striped, Printed"
-              />
-            </div>
           </div>
         </div>
         {/* Sizing and Fit */}
@@ -320,7 +189,7 @@ const ProductForm = ({
           <h3>Size & Fit</h3>
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
-              <label>Available Sizes*</label>
+              <label>Available Sizes</label>
               {sizes.map((size, idx) => (
                 <div key={idx} className={styles.arrayInputContainer}>
                   <input
@@ -329,7 +198,6 @@ const ProductForm = ({
                     onChange={e => handleSizeChange(idx, e.target.value)}
                     className={`${styles.formControl} ${styles.arrayInput}`}
                     placeholder={`Size ${idx + 1} (e.g., S, M, L, XL)`}
-                    required
                   />
                   <button type="button" className={styles.removeButton} onClick={() => handleRemoveSize(idx)}>
                     <X size={16} />
@@ -570,18 +438,6 @@ const ProductForm = ({
               className={styles.imageUploadInput}
               disabled={imageFiles.length >= 5 || isUploading}
             />
-            {/* Upload Progress */}
-            {isUploading && (
-              <div className={styles.uploadProgress}>
-                <div className={styles.progressBar}>
-                  <div 
-                    className={styles.progressFill} 
-                    style={{ width: `${uploadProgress}%` }}
-                  ></div>
-                </div>
-                <span>Uploading images: {uploadProgress}%</span>
-              </div>
-            )}
             {imagePreviewUrls.length > 0 && (
               <div className={styles.imagePreviewContainer}>
                 {imagePreviewUrls.map((image, index) => (

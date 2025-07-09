@@ -66,7 +66,7 @@ const CheckoutPage = () => {
           category: item.category || 'uncategorized',
           color: item.color || '',
           size: item.size || '',
-          subCategory: item.subCategory || '',
+          images: item.images || [],
         })),
         customer: {
           email: user?.email,
@@ -151,12 +151,11 @@ const CheckoutPage = () => {
           </thead>
           <tbody>
             {cartItems.map(item => (
-              <tr key={`${item.id}__${item.color || ''}__${item.size || ''}__${item.subCategory || ''}`}>
+              <tr key={`${item.id}__${item.color || ''}__${item.size || ''}`}>
                 <td>
                   {item.name}
                   {item.color && <div><strong>Color:</strong> {item.color}</div>}
                   {item.size && <div><strong>Size:</strong> {item.size}</div>}
-                  {item.subCategory && <div><strong>Subcategory:</strong> {item.subCategory}</div>}
                 </td>
                 <td>{item.quantity}</td>
                 <td>{formatPKR(item.price)}</td>

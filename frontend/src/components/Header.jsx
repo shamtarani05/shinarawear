@@ -14,11 +14,16 @@ export default function Header() {
   const clearUser = useAuthStore((state) => state.clearUser);
   const navigate = useNavigate();
 
-  const categories =[
-  { name: "Men's Collection", icon: null },
-  { name: "Women's Collection", icon: null },
-  { name: "Ethnic Wear", icon: null },
-  { name: "Accessories", icon: null },
+  const categories = [
+    "Earrings",
+    "Necklaces",
+    "Bracelets",
+    "Rings",
+    "Anklets",
+    "Nose Pins",
+    "Bangles",
+    "Maang Tikka",
+    "Pendant Sets",
 ]
   const handleAccountClick = () => {
     navigate('/auth'); // This will navigate to your Auth.jsx component
@@ -91,17 +96,13 @@ export default function Header() {
           <ul className={styles.categoryList}>
             {categories.map((category, index) => (
               <li key={index} className={styles.categoryItem}>
-                <Link to={`/collections/${category.name.toLowerCase()}`} className={styles.categoryLink}>
-                  {category.icon && <span className={styles.categoryIcon}>{category.icon}</span>}
-                  {category.name}
+                <Link to={`/collections/${category.toLowerCase()}`} className={styles.categoryLink}>
+                  
+                  {category}
                 </Link>
               </li>
             ))}
-             <li className={styles.categoryItem}>
-                <Link to={'/products/new-arrivals'} className={styles.categoryLink}>
-                 New Arrivals
-                </Link>
-              </li>
+            
               <li className={styles.categoryItem}>
                 <Link to={'/products/sale'} className={styles.categoryLink}>
                  Sale

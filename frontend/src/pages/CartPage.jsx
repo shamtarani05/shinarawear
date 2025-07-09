@@ -111,9 +111,9 @@ const CartPage = () => {
                       <div key={item.id} className={styles.cartItem}>
                         <div className={styles.itemImageContainer}>
                           <div className={styles.itemImage}>
-                            {item.image ? (
+                            {item.images[0]? (
                               <img
-                                src={item.image}
+                                src={item.images[0]}
                                 alt={item.name}
                                 className={styles.productImage}
                                 onError={(e) => {

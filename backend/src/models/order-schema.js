@@ -31,9 +31,8 @@ const OrderSchema = new mongoose.Schema({
       type: String,
       default: ''
     },
-    subCategory: {
-      type: String,
-      default: ''
+    images: {
+      type: Array,
     }
   }],
 

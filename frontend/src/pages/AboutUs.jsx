@@ -1,35 +1,12 @@
 import React from 'react';
-import { Award, Heart, Users, Clock, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, Heart, Users, Clock, Star, ChevronLeft, ChevronRight, Gem, Diamond, Sparkles } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styles from '../styles/aboutus.module.css';
 
 const AboutUs = () => {
-  const brandPartners = [
-    { name: 'HR Fabrics', img: '/hrfabrics.png' },
-    { name: 'Saphiree', img: '/saphiree.png' },
-    { name: 'Alkaram Studio', img: '/alkaram.png' },
-    { name: 'Gul Ahmed', img: '/gulahmed.png' },
-    { name: 'Limelight', img: '/limelight.png' },
-  ];
 
-  const [scrollIndex, setScrollIndex] = React.useState(0);
-  const sliderRef = React.useRef(null);
-
-  const scrollToIndex = (idx) => {
-    if (sliderRef.current) {
-      const cardWidth = sliderRef.current.firstChild?.offsetWidth || 0;
-      sliderRef.current.scrollTo({ left: idx * (cardWidth + 24), behavior: 'smooth' });
-    }
-    setScrollIndex(idx);
-  };
-
-  const handlePrev = () => {
-    if (scrollIndex > 0) scrollToIndex(scrollIndex - 1);
-  };
-  const handleNext = () => {
-    if (scrollIndex < brandPartners.length - 1) scrollToIndex(scrollIndex + 1);
-  };
+ 
 
   return (
     <div className={styles.container}>
@@ -38,8 +15,8 @@ const AboutUs = () => {
         {/* Hero Section */}
         <section className={styles.heroSection}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>About Shinara Wear</h1>
-            <p className={styles.heroSubtitle}>Crafting Modern Fashion for Every Story</p>
+            <h1 className={styles.heroTitle}>About Shinara Jewelry</h1>
+            <p className={styles.heroSubtitle}>Crafting Timeless Elegance for Every Moment</p>
           </div>
         </section>
 
@@ -48,23 +25,23 @@ const AboutUs = () => {
           <div className={styles.missionContent}>
             <h2 className={styles.sectionTitle}>Our Mission</h2>
             <p className={styles.missionText}>
-              At Shinara Wear, we believe fashion is more than clothing—it's a statement of individuality, confidence, and creativity. Our mission is to empower people to express themselves through high-quality, trend-forward apparel that blends comfort, style, and sustainability.
+              At Shinara Jewelry, we believe that every piece tells a story—of love, celebration, achievement, and personal style. Our mission is to create exquisite jewelry that captures life's most precious moments through exceptional craftsmanship, timeless design, and ethically sourced materials.
             </p>
             <div className={styles.missionIconsContainer}>
               <div className={styles.missionIconBox}>
-                <div className={styles.iconCircle}><Star className={styles.icon} /></div>
-                <h3 className={styles.iconTitle}>Trendy</h3>
-                <p className={styles.iconText}>Inspired by global fashion and local culture</p>
+                <div className={styles.iconCircle}><Sparkles className={styles.icon} /></div>
+                <h3 className={styles.iconTitle}>Elegant</h3>
+                <p className={styles.iconText}>Inspired by timeless beauty and modern sophistication</p>
               </div>
               <div className={styles.missionIconBox}>
-                <div className={styles.iconCircle}><Award className={styles.icon} /></div>
+                <div className={styles.iconCircle}><Diamond className={styles.icon} /></div>
                 <h3 className={styles.iconTitle}>Quality</h3>
-                <p className={styles.iconText}>Premium fabrics, expert craftsmanship</p>
+                <p className={styles.iconText}>Premium gemstones, precious metals, master craftsmanship</p>
               </div>
               <div className={styles.missionIconBox}>
                 <div className={styles.iconCircle}><Heart className={styles.icon} /></div>
                 <h3 className={styles.iconTitle}>Passion</h3>
-                <p className={styles.iconText}>Designed with love for every occasion</p>
+                <p className={styles.iconText}>Designed with love for life's special occasions</p>
               </div>
             </div>
           </div>
@@ -79,14 +56,14 @@ const AboutUs = () => {
             <div className={styles.historyText}>
               <h2 className={styles.sectionTitle}>Our Story</h2>
               <p className={styles.historyParagraph}>
-                Founded in 2022, Shinara Wear started as a small boutique with a big dream: to make high-quality, stylish clothing accessible to everyone. Today, we are a leading name in modern fashion, known for our bold designs, ethical sourcing, and customer-first approach.
+                Founded in 2022, Shinara Jewelry began as a small artisan workshop with a passion for creating beautiful, meaningful jewelry. Today, we are a trusted name in fine jewelry, known for our unique designs, ethical sourcing, and commitment to celebrating life's most precious moments.
               </p>
               <p className={styles.historyParagraph}>
-                Our collections are inspired by the vibrant energy of our community and the ever-evolving world of style. From everyday essentials to statement pieces, we create fashion that fits your life.
+                Our collections are inspired by the natural beauty of gemstones and the artistry of traditional jewelry-making techniques. From engagement rings to everyday elegance, we create pieces that become treasured heirlooms for generations to come.
               </p>
             </div>
             <div className={styles.historyImage}>
-              <img src="/fashion-show.jpg" alt="Shinara Wear Fashion Show" className={styles.historyImg} />
+              <img src="./Black and Yellow Modern Realistic Jewelry and Fashion Logo.png" alt="Shinara Jewelry Showcase" className={styles.historyImg} />
             </div>
           </div>
         </section>
@@ -100,8 +77,8 @@ const AboutUs = () => {
                 <img src="/shampic2.jpg" alt="Shinara" className={styles.memberImg} />
               </div>
               <h3 className={styles.memberName}>Shinara</h3>
-              <p className={styles.memberTitle}>Founder & Designer</p>
-              <p className={styles.memberBio}>Visionary founder and designer behind Shinara Wear, dedicated to creating bold, accessible fashion for all.</p>
+              <p className={styles.memberTitle}>Founder & Master Jeweler</p>
+              <p className={styles.memberBio}>Visionary founder and master jeweler behind Shinara Jewelry, dedicated to creating timeless pieces that celebrate life's special moments.</p>
             </div>
             <div className={styles.teamMember}>
               <div className={styles.teamMemberImage}>
@@ -109,7 +86,7 @@ const AboutUs = () => {
               </div>
               <h3 className={styles.memberName}>Sham</h3>
               <p className={styles.memberTitle}>CEO</p>
-              <p className={styles.memberBio}>Leads Shinara Wear with a vision for growth, innovation, and excellence in the fashion industry.</p>
+              <p className={styles.memberBio}>Leads Shinara Jewelry with a vision for excellence, innovation, and ethical practices in the fine jewelry industry.</p>
             </div>
             <div className={styles.teamMember}>
               <div className={styles.teamMemberImage}>
@@ -117,7 +94,7 @@ const AboutUs = () => {
               </div>
               <h3 className={styles.memberName}>Disha</h3>
               <p className={styles.memberTitle}>Sales Manager</p>
-              <p className={styles.memberBio}>Drives sales and builds strong relationships with our valued customers and partners.</p>
+              <p className={styles.memberBio}>Helps customers find the perfect pieces and builds lasting relationships with our valued clients and partners.</p>
             </div>
           </div>
         </section>
@@ -130,22 +107,22 @@ const AboutUs = () => {
               <div className={styles.valueCard}>
                 <div className={styles.valueIconContainer}><Users className={styles.valueIcon} /></div>
                 <h3 className={styles.valueTitle}>Community</h3>
-                <p className={styles.valueText}>We celebrate diversity and support the communities that inspire our collections.</p>
+                <p className={styles.valueText}>We celebrate life's milestones and support the communities that inspire our beautiful creations.</p>
               </div>
               <div className={styles.valueCard}>
                 <div className={styles.valueIconContainer}><Heart className={styles.valueIcon} /></div>
-                <h3 className={styles.valueTitle}>Sustainability</h3>
-                <p className={styles.valueText}>We are committed to ethical sourcing, eco-friendly materials, and responsible production.</p>
+                <h3 className={styles.valueTitle}>Ethical Sourcing</h3>
+                <p className={styles.valueText}>We are committed to conflict-free diamonds, responsibly sourced gemstones, and sustainable practices.</p>
               </div>
               <div className={styles.valueCard}>
                 <div className={styles.valueIconContainer}><Award className={styles.valueIcon} /></div>
                 <h3 className={styles.valueTitle}>Excellence</h3>
-                <p className={styles.valueText}>We never compromise on quality and continually strive to improve our designs and service.</p>
+                <p className={styles.valueText}>We never compromise on quality and continually strive to perfect our craftsmanship and service.</p>
               </div>
               <div className={styles.valueCard}>
-                <div className={styles.valueIconContainer}><Clock className={styles.valueIcon} /></div>
-                <h3 className={styles.valueTitle}>Innovation</h3>
-                <p className={styles.valueText}>We blend tradition with modern trends to create unique, memorable fashion.</p>
+                <div className={styles.valueIconContainer}><Gem className={styles.valueIcon} /></div>
+                <h3 className={styles.valueTitle}>Artistry</h3>
+                <p className={styles.valueText}>We blend traditional jewelry-making techniques with contemporary design to create unique, memorable pieces.</p>
               </div>
             </div>
           </div>

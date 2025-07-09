@@ -89,7 +89,7 @@ const EditProductPage = () => {
         keyFeatures: keyFeatures.filter(item => item.trim() !== ''),
         sizeChart: sizeChart.filter(item => item.trim() !== ''),
         sizes: sizes.filter(item => item.trim() !== ''),
-        colors: colors.filter(item => item.trim() !== ''),
+      
         price: parseFloat(formData.price),
         discount: parseFloat(formData.discount),
         discountedPrice: formData.discount > 0 ? parseFloat(formData.price) * (1 - parseFloat(formData.discount)/100) : null,

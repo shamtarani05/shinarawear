@@ -224,7 +224,6 @@ const createOrder = async (req, res) => {
       ...item,
       color: item.color || '',
       size: item.size || '',
-      subCategory: item.subCategory || '',
     }));
     orderData.shippingAddress = orderData.address || orderData.shippingAddress || {};
     orderData.subtotal = orderData.subtotal || (orderData.products.reduce((sum, item) => sum + (item.price * item.quantity), 0));

@@ -13,6 +13,7 @@ import FAQSection from '../components/product/FAQSection';
 import styles from '../styles/medicinedescriptionpage.module.css';
 import useCartStore from '../stores/cart-store';
 import { apiUrl } from '../utils/api';
+import TopSellingProducts from '../components/TopSellingProducts';
 
 export default function ProductDescriptionPage() {
   const { id } = useParams();
@@ -188,7 +189,6 @@ export default function ProductDescriptionPage() {
 
   // Determine product category for breadcrumb
   const productCategory = productData?.category || "Products";
-  const productSubCategory = productData?.subCategory || "";
 
   // Handle loading state
   if (loading) {
@@ -244,12 +244,6 @@ export default function ProductDescriptionPage() {
             <span className={styles.breadcrumbLink}>Home</span>
             <span>/</span>
             <span className={styles.breadcrumbLink}>{productCategory}</span>
-            {productSubCategory && (
-              <>
-                <span>/</span>
-                <span className={styles.breadcrumbLink}>{productSubCategory}</span>
-              </>
-            )}
             <span>/</span>
             <span>{productData?.name}</span>
           </div>
@@ -343,6 +337,7 @@ export default function ProductDescriptionPage() {
             productType="product"
           />
         </div>
+        <TopSellingProducts/>
       </div>
       <Footer />
     </>

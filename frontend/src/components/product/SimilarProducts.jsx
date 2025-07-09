@@ -58,7 +58,7 @@ export default function SimilarProducts({ products, navigate, addToCart }) {
                           id: productId,
                           name: product.name,
                           price: product.discountedPrice || product.price,
-                          image: product.images?.[0],
+                          images: product.images || [],
                           quantity: 1,
                           maxQuantity: product.quantity || 0
                         });
