@@ -53,7 +53,7 @@ const HeroSection = () => {
       subtitle: "FASHION RING COLLECTION",
       tagline: "Cocktail rings, stackable bands, and everyday essentials",
       ctaText: "View Rings",
-      productImage: "./ring.jpg"
+      productImage: "./ring.jpeg"
     },
     {
       id: 5,
