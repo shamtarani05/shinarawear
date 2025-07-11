@@ -9,16 +9,16 @@ const productSchema = new Schema({
     category: { 
         type: String, 
         required: true,
-        enum: [ "Earrings",
-            "Necklaces",
-            "Bracelets",
-            "Rings",
-            "Anklets",
-            "Nose Pins",
-            "Bangles",
-            "Maang Tikka",
-            "Pendant Sets",
-            "Chokers"]
+                enum: [ "Earrings",
+                    "Necklaces",
+                    "Bracelets",
+                    "Rings",
+                    "Anklets",
+                    "Nose Pins",
+                    "Bangles",
+                    "Maang Tikka",
+                    "Pendant Sets",
+                    "Chokers"]
     },
     discountedPrice: { type: Number, min: 0 },
     discount: { type: Number, min: 0, max: 100, default: 0 },
@@ -33,9 +33,7 @@ const productSchema = new Schema({
     reviewCount: { type: Number, min: 0, default: 0 },
     description: { type: String},
     
-    // Clothing-specific fields
-    colors: { type: [String]},
-    sizes: { type: [String]},
+  
     
     careInstructions: { type: String },
     season: { 

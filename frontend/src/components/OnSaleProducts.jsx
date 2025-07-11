@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState} from 'react';
 import MedicineCard from './MedicineCard';
 import styles from '../styles/topsellingproducts.module.css';
 import { useNavigate } from 'react-router-dom';

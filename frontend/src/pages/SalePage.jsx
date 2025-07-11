@@ -7,10 +7,15 @@ import Footer from '../components/Footer';
 import { apiUrl } from '../utils/api';
 
 const categories = [
-  "Men's Collection",
-  "Women's Collection",
-  "Ethnic Wear",
-  "Accessories",
+    "Earrings",
+    "Necklaces",
+    "Bracelets",
+    "Rings",
+    "Anklets",
+    "Nose Pins",
+    "Bangles",
+    "Maang Tikka",
+    "Pendant Sets",
 ];
 
 const PRODUCTS_PER_PAGE = 24;

@@ -56,7 +56,7 @@ const getProductsbyCategory = async (req, res) => {
 // Get all products with pagination and optional filters
 const getAllProducts = async (req, res) => {
   try {
-    const { page = 1, limit = 10, category, search } = req.query;
+    const { page = 1, limit = 10, category, search, discountMin } = req.query;
 
     const pageNumber = parseInt(page, 10);
     const limitNumber = parseInt(limit, 10);
@@ -76,6 +76,14 @@ const getAllProducts = async (req, res) => {
         { name: new RegExp(search, 'i') },
         { id: new RegExp(search, 'i') }
       ];
+    }
+
+    // Apply discountMin filter if provided
+    if (discountMin !== undefined) {
+      const min = parseFloat(discountMin);
+      if (!isNaN(min)) {
+        query.discount = { $gte: min };
+      }
     }
 
     // Get total count for pagination

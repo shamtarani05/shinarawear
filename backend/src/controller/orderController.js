@@ -241,6 +241,20 @@ const createOrder = async (req, res) => {
       };
     }
 
+    // Ensure customer object and email are always present
+    if (!orderData.customer || !orderData.customer.email) {
+      // Try to build from request body
+      orderData.customer = {
+        email: orderData.email || (orderData.address && orderData.address.email) || '',
+        name: orderData.address?.name || '',
+        phone: orderData.address?.phone || '',
+      };
+    }
+    // Fallback: if still no email, reject
+    if (!orderData.customer.email) {
+      return res.status(400).json({ success: false, message: 'Customer email is required for order.' });
+    }
+
     // Create order
     const newOrder = new Order(orderData);
     await newOrder.save();

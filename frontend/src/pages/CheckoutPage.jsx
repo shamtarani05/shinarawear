@@ -21,10 +21,13 @@ const CheckoutPage = () => {
     postalCode: '',
     country: 'Pakistan',
   });
+  // Add email state for guest checkout
+  const [email, setEmail] = useState(user?.email || '');
   const [isPlacing, setIsPlacing] = useState(false);
   const [orderSuccess, setOrderSuccess] = useState(false);
   const [orderError, setOrderError] = useState('');
   const [addressError, setAddressError] = useState('');
+  const [emailError, setEmailError] = useState('');
 
   // Calculate totals
   const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -50,9 +53,16 @@ const CheckoutPage = () => {
     setIsPlacing(true);
     setOrderError('');
     setAddressError('');
+    setEmailError('');
     // Validate address fields
     if (!address.name || !address.phone || !address.street || !address.city || !address.state || !address.postalCode || !address.country) {
       setAddressError('Please fill in all required shipping address fields.');
+      setIsPlacing(false);
+      return;
+    }
+    // Validate email for guest checkout
+    if (!user && (!email || !/^\S+@\S+\.\S+$/.test(email))) {
+      setEmailError('Please enter a valid email address.');
       setIsPlacing(false);
       return;
     }
@@ -69,7 +79,7 @@ const CheckoutPage = () => {
           images: item.images || [],
         })),
         customer: {
-          email: user?.email,
+          email: user?.email || email,
           phone: address.phone,
           name: address.name,
           id: user?.id || 'guest',
@@ -81,6 +91,7 @@ const CheckoutPage = () => {
         appliedPromo: appliedPromo || null,
         address: address,
       };
+      console.log(orderData)
       const response = await fetch(apiUrl('/orders'), {
         method: 'POST',
         headers: {
@@ -93,6 +104,7 @@ const CheckoutPage = () => {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Order failed');
       }
+     
       setOrderSuccess(true);
       clearCart();
     } catch (error) {
@@ -128,6 +140,18 @@ const CheckoutPage = () => {
       <div className={styles.formSection}>
         <h2>Shipping Address</h2>
         <form className={styles.addressForm} onSubmit={e => e.preventDefault()}>
+          {/* Email field for guest checkout */}
+          {!user && (
+            <input
+              name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Email Address"
+              required
+              type="email"
+            />
+          )}
+          {emailError && <div className={styles.orderError}>{emailError}</div>}
           <input name="name" value={address.name} onChange={handleAddressChange} placeholder="Full Name" required />
           <input name="phone" value={address.phone} onChange={handleAddressChange} placeholder="Phone Number" required />
           <input name="street" value={address.street} onChange={handleAddressChange} placeholder="Street Address" required />
