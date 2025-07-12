@@ -32,6 +32,7 @@ const AddProductPage = () => {
     category: '',
     description: '',
     sizes: [''],
+    colors: [''],
     fit: '',
     sizeChart: [''],
     price: '',
@@ -84,10 +85,9 @@ const AddProductPage = () => {
     
     try {
       // Upload images
-      let uploadProgress = 0;
       let uploadedImageUrls = [];
       if (imageFiles && imageFiles.length > 0) {
-        uploadedImageUrls = await uploadImagesToSupabase(imageFiles, (p) => (uploadProgress = p), setIsUploading);
+        uploadedImageUrls = await uploadImagesToSupabase(imageFiles, () => {}, setIsUploading);
       }
       // Prepare the final form data
       const finalFormData = {

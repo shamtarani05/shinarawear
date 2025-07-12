@@ -40,6 +40,7 @@ const generateProductsTable = (products) => {
           <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Image</th>
           <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Product</th>
           <th style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">Category</th>
+          <th style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">Color</th>
           <th style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">Quantity</th>
           <th style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">Price</th>
           <th style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">Total</th>
@@ -55,6 +56,7 @@ const generateProductsTable = (products) => {
             </td>
             <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">${product.name}</td>
             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">${product.category || 'N/A'}</td>
+            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">${product.color || 'N/A'}</td>
             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">${product.quantity}</td>
             <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">${formatCurrency(product.price)}</td>
             <td style="padding: 12px; text-align: right; border-bottom: 1px solid #dee2e6;">${formatCurrency(product.price * product.quantity)}</td>

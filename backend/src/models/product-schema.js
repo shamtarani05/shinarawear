@@ -49,6 +49,7 @@ const productSchema = new Schema({
     images: { type: Array, default: [] },
     keyFeatures: { type: Array, default: [] },
     sizeChart: { type: Array, default: [] },
+    colors: { type: Array, default: [] },
     styleNotes: { type: String },
     similarProducts: { type: Array, default: [] },
     

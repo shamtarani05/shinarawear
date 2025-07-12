@@ -32,6 +32,7 @@ const ProductForm = ({
   const [keyFeatures, setKeyFeatures] = useState(initialValues.keyFeatures || ['']);
   const [sizeChart, setSizeChart] = useState(initialValues.sizeChart || ['']);
   const [sizes, setSizes] = useState(initialValues.sizes || ['']);
+  const [colors, setColors] = useState(initialValues.colors || ['']);
   const [imageFiles, setImageFiles] = useState([]);
   const [imagePreviewUrls, setImagePreviewUrls] = useState([]);
 
@@ -70,7 +71,16 @@ const ProductForm = ({
   };
   const handleRemoveSize = (index) => setSizes(sizes.filter((_, i) => i !== index));
 
-  // Update formData when sizes/keyFeatures/sizeChart change
+  // Colors handlers
+  const handleAddColor = () => setColors([...colors, '']);
+  const handleColorChange = (index, value) => {
+    const newColors = [...colors];
+    newColors[index] = value;
+    setColors(newColors);
+  };
+  const handleRemoveColor = (index) => setColors(colors.filter((_, i) => i !== index));
+
+  // Update formData when sizes/keyFeatures/sizeChart/colors change
   useEffect(() => {
     setFormData(prev => ({ ...prev, sizes: sizes.filter(s => s.trim() !== '') }));
   }, [sizes]);
@@ -80,6 +90,9 @@ const ProductForm = ({
   useEffect(() => {
     setFormData(prev => ({ ...prev, sizeChart: sizeChart.filter(s => s.trim() !== '') }));
   }, [sizeChart]);
+  useEffect(() => {
+    setFormData(prev => ({ ...prev, colors: colors.filter(c => c.trim() !== '') }));
+  }, [colors]);
 
   // Image upload logic (delegated to parent for actual upload if needed)
   const handleImageUpload = (e) => {
@@ -118,6 +131,7 @@ const ProductForm = ({
       keyFeatures,
       sizeChart,
       sizes,
+      colors,
     });
   };
 
@@ -252,6 +266,36 @@ const ProductForm = ({
             >
               <Plus size={16} />
               <span>Add Size Measurement</span>
+            </button>
+          </div>
+          {/* Colors - Multiple inputs */}
+          <div className={styles.formGroup}>
+            <label>Available Colors</label>
+            {colors.map((color, index) => (
+              <div key={index} className={styles.arrayInputContainer}>
+                <input 
+                  type="text"
+                  value={color}
+                  onChange={(e) => handleColorChange(index, e.target.value)}
+                  className={`${styles.formControl} ${styles.arrayInput}`}
+                  placeholder={`Color ${index + 1} (e.g., Red, Blue, Gold, Silver)`}
+                />
+                <button 
+                  type="button" 
+                  className={styles.removeButton}
+                  onClick={() => handleRemoveColor(index)}
+                >
+                  <X size={16} />
+                </button>
+              </div>
+            ))}
+            <button 
+              type="button" 
+              className={styles.addButton}
+              onClick={handleAddColor}
+            >
+              <Plus size={16} />
+              <span>Add Color</span>
             </button>
           </div>
         </div>
