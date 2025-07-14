@@ -173,7 +173,7 @@ export default function ProductInfo({ product, addToCart, getItemQuantity, cart 
         <div className={styles.infoItem}>
           <Truck size={20} className={styles.infoIcon} />
           <div>
-            <span className={styles.infoText}>Free delivery on orders above PKR 3000</span>
+            <span className={styles.infoText}>Customers can check parcels before paying </span>
           </div>
         </div>
       </div>
