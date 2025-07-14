@@ -6,45 +6,48 @@ const productSchema = new Schema({
     name: { type: String, required: true },
     price: { type: Number, required: true, min: 0 },
     brandName: { type: String, required: true },
-    category: { 
-        type: String, 
+    category: {
+        type: String,
         required: true,
-                enum: [ "Earrings",
-                    "Necklaces",
-                    "Bracelets",
-                    "Rings",
-                    "Anklets",
-                    "Nose Pins",
-                    "Bangles",
-                    "Maang Tikka",
-                    "Pendant Sets",
-                    "Chokers"]
+        enum: ["Earrings",
+            "Necklaces",
+            "Bracelets",
+            "Rings",
+            "Anklets",
+            "Hair Ketcher",
+            "Hair kom",
+            "Mala",
+            "Nose Pins",
+            "Bangles",
+            "Maang Tikka",
+            "Pendant Sets",
+            "Chokers"]
     },
     discountedPrice: { type: Number, min: 0 },
     discount: { type: Number, min: 0, max: 100, default: 0 },
     quantity: { type: Number, required: true, min: 0, default: 0 },
-    stockStatus: { 
-        type: String, 
-        enum: ['In Stock', 'Low Stock', 'Out of Stock', 'Coming Soon'], 
-        default: 'Out of Stock' 
+    stockStatus: {
+        type: String,
+        enum: ['In Stock', 'Low Stock', 'Out of Stock', 'Coming Soon'],
+        default: 'Out of Stock'
     },
     deliveryTime: { type: String, default: '2-3 days' },
     rating: { type: Number, min: 0, max: 5, default: 0 },
     reviewCount: { type: Number, min: 0, default: 0 },
-    description: { type: String},
-    
-  
-    
+    description: { type: String },
+
+
+
     careInstructions: { type: String },
-    season: { 
+    season: {
         type: String,
         enum: ['Spring', 'Summer', 'Autumn', 'Winter', 'All Season']
     },
-    occasion: { 
+    occasion: {
         type: String,
         enum: ['Casual', 'Formal', 'Party', 'Wedding', 'Sports', 'Beach', 'Office']
     },
-    
+
     // Arrays for multiple values
     images: { type: Array, default: [] },
     keyFeatures: { type: Array, default: [] },
@@ -52,14 +55,14 @@ const productSchema = new Schema({
     colors: { type: Array, default: [] },
     styleNotes: { type: String },
     similarProducts: { type: Array, default: [] },
-    
+
     // Metadata
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 });
 
 // Pre-save middleware to automatically set stock status based on quantity
-productSchema.pre('save', function(next) {
+productSchema.pre('save', function (next) {
     // Update stockStatus based on quantity
     if (this.quantity === 0) {
         this.stockStatus = 'Out of Stock';
@@ -68,17 +71,17 @@ productSchema.pre('save', function(next) {
     } else {
         this.stockStatus = 'In Stock';
     }
-    
+
     // Calculate discounted price if discount is provided
     if (this.discount > 0 && this.price) {
         this.discountedPrice = this.price * (1 - this.discount / 100);
     } else {
         this.discountedPrice = null;
     }
-    
+
     // Update the updatedAt timestamp
     this.updatedAt = new Date();
-    
+
     next();
 });
 
@@ -91,12 +94,12 @@ productSchema.index({ rating: -1 });
 productSchema.index({ createdAt: -1 });
 
 // Virtual for formatted price
-productSchema.virtual('formattedPrice').get(function() {
+productSchema.virtual('formattedPrice').get(function () {
     return `PKR ${this.price.toLocaleString()}`;
 });
 
 // Virtual for formatted discounted price
-productSchema.virtual('formattedDiscountedPrice').get(function() {
+productSchema.virtual('formattedDiscountedPrice').get(function () {
     if (this.discountedPrice) {
         return `PKR ${this.discountedPrice.toLocaleString()}`;
     }
@@ -104,32 +107,32 @@ productSchema.virtual('formattedDiscountedPrice').get(function() {
 });
 
 // Method to check if product is available
-productSchema.methods.isAvailable = function() {
+productSchema.methods.isAvailable = function () {
     return this.quantity > 0 && this.stockStatus !== 'Out of Stock';
 };
 
 // Method to get main image
-productSchema.methods.getMainImage = function() {
+productSchema.methods.getMainImage = function () {
     return this.images && this.images.length > 0 ? this.images[0] : null;
 };
 
 // Static method to find products by category
-productSchema.statics.findByCategory = function(category) {
+productSchema.statics.findByCategory = function (category) {
     return this.find({ category });
 };
 
 // Static method to find products in stock
-productSchema.statics.findInStock = function() {
+productSchema.statics.findInStock = function () {
     return this.find({ stockStatus: { $in: ['In Stock', 'Low Stock'] } });
 };
 
 // Static method to find products by price range
-productSchema.statics.findByPriceRange = function(minPrice, maxPrice) {
-    return this.find({ 
-        price: { 
-            $gte: minPrice, 
-            $lte: maxPrice 
-        } 
+productSchema.statics.findByPriceRange = function (minPrice, maxPrice) {
+    return this.find({
+        price: {
+            $gte: minPrice,
+            $lte: maxPrice
+        }
     });
 };
 

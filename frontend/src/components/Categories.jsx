@@ -74,6 +74,27 @@ const categories = [
     icon: "🔗", 
     color: "var(--color-sunshine)",
     gradient: "var(--gradient-ocean)"
+  },
+  { 
+    id: 11, 
+    name: "Hair Ketcher", 
+    icon: "🌸", 
+    color: "var(--color-coral)",
+    gradient: "var(--gradient-sunset)"
+  },
+  { 
+    id: 12, 
+    name: "Hair Kom", 
+    icon: "🪮", 
+    color: "var(--color-lavender)",
+    gradient: "var(--gradient-trendy)"
+  },
+  { 
+    id: 13, 
+    name: "Mala", 
+    icon: "🔮", 
+    color: "var(--color-sage)",
+    gradient: "var(--gradient-premium)"
   }
 ];
 

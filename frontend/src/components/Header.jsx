@@ -19,10 +19,10 @@ export default function Header() {
     "Necklaces",
     "Bracelets",
     "Rings",
-    "Anklets",
-    "Nose Pins",
+    "Hair kom",
+    "Hair Ketcher",
     "Bangles",
-    "Maang Tikka",
+    "Mala",
     "Pendant Sets",
 ]
   const handleAccountClick = () => {

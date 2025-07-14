@@ -33,6 +33,9 @@ const Footer = () => {
             <li><Link to="/collections/maang tikka">Maang Tikka</Link></li>
             <li><Link to="/collections/pendant sets">Pendant Sets</Link></li>
             <li><Link to="/collections/chokers">Chokers</Link></li>
+            <li><Link to="/collections/chokers">Hair Ketcher</Link></li>
+            <li><Link to="/collections/chokers">Hair kom</Link></li>
+            <li><Link to="/collections/chokers">Mala</Link></li>
             <li><Link to="/products/new-arrivals">New Arrivals</Link></li>
             <li><Link to="/products/sale">Sale</Link></li>
           </ul>
