@@ -69,10 +69,6 @@ const NewArrivalProducts = () => {
               <TrendingUp size={14} />
               <span>Viral on TikTok</span>
             </div>
-            <div className={styles.valueProp}>
-              <Star size={14} />
-              <span>Gen Z approved</span>
-            </div>
           </div>
         </div>
 
