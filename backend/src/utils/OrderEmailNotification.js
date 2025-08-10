@@ -7,7 +7,7 @@ const { generateInvoicePDF } = require('./invoiceGenerator');
  * Initialize email transporter using Gmail
  */
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'gmail', 
   auth: {
     user: process.env.SENDER_EMAIL,
     pass: process.env.APP_PASSWORD,
