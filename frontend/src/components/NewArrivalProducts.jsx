@@ -155,10 +155,7 @@ const NewArrivalProducts = () => {
           </div>
           
           <div className={styles.footerActions}>
-            <a href='https://www.instagram.com/shinarawear?igsh=OHRsNm9pNmhnc29q' className={styles.secondaryBtn}
-            >
-              Follow on Instagram
-            </a>
+          
             <button 
               className={styles.primaryBtn}
               onClick={() => navigate('/products/new-arrivals')}
